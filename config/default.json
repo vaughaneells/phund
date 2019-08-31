@@ -1,0 +1,17 @@
+{
+  "mongoURI": "mongodb+srv://vaughan18:Roxy2006%21@phunddb-p7v2c.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "nekottercesyrev678",
+
+  "LoanRegs": {
+    "CA": {
+      "max_amount": 1000,
+      "max_installments": 12,
+      "apr": 25
+    },
+    "AZ": {
+      "max_amount": 1000,
+      "max_installments": 12,
+      "apr": 25
+    }
+  }
+}
