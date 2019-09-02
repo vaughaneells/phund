@@ -7,7 +7,7 @@
     "start": "node server",
     "server": "nodemon server"
   },
-  "author": "Vaughan Eells",
+  "author": "Vaughan Eells, Will Resen",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,7 +21,14 @@
     "zipcodes": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "chai": "^4.2.0",
     "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1"
+    "enzyme": "^3.10.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "webpack": "^4.39.3"
   }
 }
