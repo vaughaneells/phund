@@ -6,6 +6,7 @@ import Login from './Login.jsx';
 import Build from './Build.jsx';
 import Lend from './Lend.jsx';
 import Borrow from './Borrow.jsx';
+import PrivateComponent from './PrivateComponent.jsx';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class App extends React.Component {
