@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://vaughan18:Roxy2006%21@phunddb-p7v2c.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb://localhost:27017/phund",
   "jwtSecret": "nekottercesyrev678",
 
   "LoanRegs": {
