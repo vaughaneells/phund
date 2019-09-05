@@ -24,7 +24,7 @@ class App extends React.Component {
           <Route path = '/login' component={Login}></Route>
           <Route path = '/build' component={<PrivateComponent component={Build}/>}></Route>
           <Route path = '/borrow' component={<PrivateComponent component={Borrow}/>}></Route>
-          <Route path = '/lend' component={<PrivateComponent component={Lend}/>)}></Route>
+          <Route path = '/lend' component={<PrivateComponent component={Lend}/>}></Route>
         </Main>
       </Router>
     );
