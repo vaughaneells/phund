@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 const Register = () => {
-  <div></div>
+  return <div></div>;
 }
 
 export default Register;
