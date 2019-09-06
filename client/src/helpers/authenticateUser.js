@@ -6,6 +6,7 @@ const auth = async () => {
   await fetch('/auth')
     .then(res => res.json())
     .then(res => authenticated = res.authenticated)
+    .catch(err => authenticated = false); //if anything goes wrong, do not authenticate user
 
   //return boolean of whether user is authenticated
   return authenticated;
