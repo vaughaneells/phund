@@ -19,13 +19,13 @@ class App extends React.Component {
     return (
       <Router>
         <Sidebar/>
-        <Main>
+        <div id="main">
           <Route path = '/register' component={Register}></Route>
           <Route path = '/login' component={Login}></Route>
-          <Route path = '/build' component={<PrivateComponent component={Build}/>}></Route>
-          <Route path = '/borrow' component={<PrivateComponent component={Borrow}/>}></Route>
-          <Route path = '/lend' component={<PrivateComponent component={Lend}/>}></Route>
-        </Main>
+          <Route path = '/build' render={() => <PrivateComponent component={Build}/>}></Route>
+          <Route path = '/borrow' render={() => <PrivateComponent component={Borrow}/>}></Route>
+          <Route path = '/lend' render={() => <PrivateComponent component={Lend}/>}></Route>
+        </div>
       </Router>
     );
   }
