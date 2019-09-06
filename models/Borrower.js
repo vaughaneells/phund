@@ -11,6 +11,9 @@ const BorrowerSchema = new mongoose.Schema({
   loan_amount: {
     type: Number
   },
+  issue_date: {
+    type: Date
+  },
   original_total_amount: {
     type: Number
   },
