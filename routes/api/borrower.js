@@ -10,6 +10,7 @@ const db = config.get('mongoURI');
 
 const Borrower = require('../../models/Borrower');
 const User = require('../../models/User');
+const Completed_Loans = require('../../models/Completed_Loans');
 
 //@route GET api/profile/me
 //@desc Get current users profile
@@ -54,7 +55,7 @@ router.post('/design', auth, async (req, res) => {
   const { loan_amount, months, zipcode } = req.body;
 
   //Build Loan
-  const loanFields = {};
+  const loan_Fields = {};
   let supported = false;
 
   loanState = zipcodes.lookup(zipcode).state;
@@ -132,28 +133,29 @@ router.post('/design', auth, async (req, res) => {
   let apr = (total_fees / original_total_amount) * 100;
 
   //Populate loan fields for Borrower Profile
-  loanFields.loan_amount = loan_amount;
-  loanFields.months = months;
-  loanFields.user = req.user.id;
-  loanFields.original_total_amount =
+  loan_Fields.loan_amount = loan_amount;
+  loan_Fields.months = months;
+  loan_Fields.user = req.user.id;
+  loan_Fields.original_total_amount =
     Math.trunc(original_total_amount * 100) / 100;
-  loanFields.current_total_amount = loanFields.original_total_amount;
-  loanFields.issue_date = Date.now();
-  loanFields.balance = Math.trunc(original_total_amount * 100) / 100;
-  loanFields.zipcode = zipcode;
-  loanFields.approved = true;
-  loanFields.borrower_status = true;
-  loanFields.apr = parseFloat(apr.toFixed(2));
-  loanFields.installment_amount = installment_amount;
-  loanFields.upcoming_date = upcoming_date;
-  loanFields.installment_dates = installment_dates;
-  loanFields.name = user.name;
+  loan_Fields.current_total_amount = loan_Fields.original_total_amount;
+  loan_Fields.issue_date = Date.now();
+  loan_Fields.balance = Math.trunc(original_total_amount * 100) / 100;
+  loan_Fields.zipcode = zipcode;
+  loan_Fields.approved = true;
+  loan_Fields.borrower_status = true;
+  loan_Fields.apr = parseFloat(apr.toFixed(2));
+  loan_Fields.installment_amount = installment_amount;
+  loan_Fields.upcoming_date = upcoming_date;
+  loan_Fields.installment_dates = installment_dates;
+  loan_Fields.name = user.name;
 
   try {
     //Create borrower profile
 
     if (supported) {
-      let borrower = new Borrower(loanFields);
+      loan_Fields.issue_date = Date.now();
+      let borrower = new Borrower(loan_Fields);
       await borrower.save();
       res.json(borrower);
     }
@@ -183,6 +185,29 @@ router.put('/update', auth, async (req, res) => {
           Math.trunc(borrower.installment_amount[0] * 100)) /
         100;
       borrower.installment_amount.shift();
+
+      //Move completed loans and loan info to cluster 'completed'
+      if (borrower.balance === 0) {
+        const completed_Fields = {};
+        completed_Fields.issue_date = borrower.issue_date;
+        completed_Fields.amount_payed = borrower.amount_payed;
+        completed_Fields.missed_payments = borrower.missed_payments;
+        completed_Fields.loan_amount = borrower.loan_amount;
+        completed_Fields.months = borrower.months;
+        completed_Fields.user = borrower.user;
+        completed_Fields.installments_payed = borrower.installments_payed;
+        completed_Fields.final_total_amount = borrower.current_total_amount;
+        completed_Fields.apr = borrower.apr;
+        completed_Fields.name = borrower.name;
+        completed_Fields.kyc = borrower.kyc;
+        completed_Fields.completed_date = Date.now();
+
+        let completed = new Completed_Loans(completed_Fields);
+        await completed.save();
+        await borrower.delete();
+
+        return res.json(completed);
+      }
     } else {
       //Calculate missed payment info
       borrower.missed_payments += 1;

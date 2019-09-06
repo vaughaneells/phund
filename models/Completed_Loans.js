@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const BorrowerSchema = new mongoose.Schema({
+const CompletedSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
@@ -14,10 +14,10 @@ const BorrowerSchema = new mongoose.Schema({
   issue_date: {
     type: Date
   },
-  original_total_amount: {
-    type: Number
+  completed_date: {
+    type: Date
   },
-  current_total_amount: {
+  final_total_amount: {
     type: Number
   },
   months: {
@@ -37,27 +37,9 @@ const BorrowerSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  installment_amount: {
-    type: [Number]
-  },
-  installment_dates: {
-    type: [Date]
-  },
-  upcoming_amount: {
-    type: Number
-  },
-  upcoming_date: {
-    type: Date
-  },
-  balance: {
-    type: Number
-  },
   missed_payments: {
     type: Number,
     default: 0
-  },
-  zipcode: {
-    type: Number
   },
   kyc: [
     {
@@ -78,17 +60,7 @@ const BorrowerSchema = new mongoose.Schema({
         required: true
       }
     }
-  ],
-  approved: {
-    type: Boolean
-  },
-  borrower_status: {
-    type: Boolean,
-    default: false
-  },
-  payment_successful: {
-    type: Boolean
-  }
+  ]
 });
 
-module.exports = Borrower = mongoose.model('borrower', BorrowerSchema);
+module.exports = Completed_Loans = mongoose.model('completed', CompletedSchema);
