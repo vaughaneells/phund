@@ -19,6 +19,13 @@ class App extends React.Component {
     return (
       <Router>
         <Sidebar/>
+        <div id="dev_links">
+          <Link to="/login">login</Link><br/>
+          <Link to="/register">register</Link><br/>
+          <Link to="/build">build</Link><br/>
+          <Link to="/borrow">borrow</Link><br/>
+          <Link to="/lend">lend</Link><br/>
+        </div>
         <div id="main">
           <Route path = '/register' component={Register}></Route>
           <Route path = '/login' component={Login}></Route>
