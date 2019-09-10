@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Register from './Register.jsx';
-import Sidebar from './Sidebar.jsx';
-import Login from './Login.jsx';
-import Build from './Build.jsx';
-import Lend from './Lend.jsx';
-import Borrow from './Borrow.jsx';
+import Register from './components/Register.jsx';
+import Sidebar from './components/Sidebar.jsx';
+import Login from './components/Login.jsx';
+import Build from './components/Build.jsx';
+import Lend from './components/Lend.jsx';
+import Borrow from './components/Borrow.jsx';
+import PrivateComponent from './components/PrivateComponent.jsx';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -18,13 +19,20 @@ class App extends React.Component {
     return (
       <Router>
         <Sidebar/>
-        <Main>
+        <div id="dev_links">
+          <Link to="/login">login</Link><br/>
+          <Link to="/register">register</Link><br/>
+          <Link to="/build">build</Link><br/>
+          <Link to="/borrow">borrow</Link><br/>
+          <Link to="/lend">lend</Link><br/>
+        </div>
+        <div id="main">
           <Route path = '/register' component={Register}></Route>
           <Route path = '/login' component={Login}></Route>
-          <Route path = '/build' component={Build}></Route>
-          <Route path = '/borrow' component={Borrow}></Route>
-          <Route path = '/lend' component={Lend}></Route>
-        </Main>
+          <Route path = '/build' render={() => <PrivateComponent component={Build}/>}></Route>
+          <Route path = '/borrow' render={() => <PrivateComponent component={Borrow}/>}></Route>
+          <Route path = '/lend' render={() => <PrivateComponent component={Lend}/>}></Route>
+        </div>
       </Router>
     );
   }

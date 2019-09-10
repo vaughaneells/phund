@@ -9,6 +9,9 @@ connectDB();
 //Initialize Express Middleware
 app.use(express.json({ extended: false }));
 
+//Serve static files
+app.use(express.static('./client/dist'));
+
 app.get('/', (req, res) => res.send('API Running'));
 
 //Define Routes

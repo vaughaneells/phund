@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const Register = () => {
+const Sidebar = () => (
   <div></div>
-}
+)
 
-export default Register;
+export default Sidebar;
