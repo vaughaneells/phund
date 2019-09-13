@@ -22,7 +22,6 @@ const Register = () => {
       })
   };
 
-  /* TODO: Implement client-side form validation. No need to have it server-side. */
   return !waitForConfirm ?
     <div id="register">
       <form onSubmit={handleSubmit}>
