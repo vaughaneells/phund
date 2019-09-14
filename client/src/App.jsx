@@ -6,6 +6,7 @@ import Login from './components/Login.jsx';
 import Build from './components/Build.jsx';
 import Lend from './components/Lend.jsx';
 import Borrow from './components/Borrow.jsx';
+import Profile from './components/Profile.jsx';
 import PrivateComponent from './components/PrivateComponent.jsx';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Link to="/build">build</Link><br/>
           <Link to="/borrow">borrow</Link><br/>
           <Link to="/lend">lend</Link><br/>
+          <Link to="/profile">profile</Link><br/>
         </div>
         <div id="main">
           <Route path = '/register' component={Register}></Route>
@@ -32,6 +34,7 @@ class App extends React.Component {
           <Route path = '/build' render={() => PrivateComponent(Build)}></Route>
           <Route path = '/borrow' render={() => PrivateComponent(Borrow)}></Route>
           <Route path = '/lend' render={() => PrivateComponent(Lend)}></Route>
+          <Route path = '/profile' render={() => PrivateComponent(Profile)}></Route>
         </div>
       </Router>
     );
