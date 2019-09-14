@@ -1,5 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const cookieParser = require('cookie-parser');
+const auth = require('./middleware/auth');
 
 const app = express();
 
@@ -7,12 +9,17 @@ const app = express();
 connectDB();
 
 //Initialize Express Middleware
+app.use(cookieParser('thisisthesecret'));
 app.use(express.json({ extended: false }));
 
 //Serve static files
 app.use(express.static('./client/dist'));
 
+//Test Express server
 app.get('/', (req, res) => res.send('API Running'));
+
+//Authenticate user on demand
+app.get('/api/auth', auth, (req, res) => res.send({auth: true}));
 
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
