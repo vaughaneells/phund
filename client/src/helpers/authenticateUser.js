@@ -3,10 +3,9 @@ const auth = async () => {
   let authenticated = false;
 
   //sends an HTTP request with the httpOnly JWT cookie to the server
-  await fetch('/auth')
+  await fetch('/api/auth')
     .then(res => res.json())
-    .then(res => authenticated = res.authenticated)
-    .catch(err => authenticated = false); //if anything goes wrong, do not authenticate user
+    .then(res => res.auth && (authenticated = true))
 
   //return boolean of whether user is authenticated
   return authenticated;
