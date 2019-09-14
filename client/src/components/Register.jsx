@@ -33,7 +33,9 @@ const Register = () => {
     </div>
     : <div id="confirm_email">
       <h2>Please enter the 4 digit PIN sent to {email}.</h2>
-      <form><input type="text" maxLength="4" placeholder="XXXX" onChange={e => setPIN(e.target.value)} /></form>
+      <form onSubmit={handleSubmit}>
+        <input type="text" maxLength="4" placeholder="XXXX" onChange={e => setPIN(e.target.value)} />
+      </form>
     </div>
 };
 
