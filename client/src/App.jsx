@@ -29,9 +29,9 @@ class App extends React.Component {
         <div id="main">
           <Route path = '/register' component={Register}></Route>
           <Route path = '/login' component={Login}></Route>
-          <Route path = '/build' render={() => <PrivateComponent component={Build}/>}></Route>
-          <Route path = '/borrow' render={() => <PrivateComponent component={Borrow}/>}></Route>
-          <Route path = '/lend' render={() => <PrivateComponent component={Lend}/>}></Route>
+          <Route path = '/build' render={() => PrivateComponent(Build)}></Route>
+          <Route path = '/borrow' render={() => PrivateComponent(Borrow)}></Route>
+          <Route path = '/lend' render={() => PrivateComponent(Lend)}></Route>
         </div>
       </Router>
     );
