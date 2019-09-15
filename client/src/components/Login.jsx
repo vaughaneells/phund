@@ -28,7 +28,7 @@ const Login = ({ originPage }) => {
         <input required type="password" value={password} placeholder="Password" onChange={e => setPassword(e.target.value)}></input>
         <input type="submit" value="Submit" />
       </form>
-    </div> : <Redirect to={`/${originPage || 'profile'}`} />;
+    </div> : <Redirect to='/dashboard'/>;
 };
 
 export default Login;
