@@ -16,9 +16,6 @@ app.use(express.json({ extended: false }));
 //Serve static files
 app.use(express.static('./client/dist'));
 
-//Authenticate user on demand
-app.get('/api/auth', auth, (req, res) => res.send({auth: true}));
-
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/login', require('./routes/api/login'));
