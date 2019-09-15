@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 const Login = ({ originPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [shouldRedirect, onRedirect] = useState(false);
+  const [redirect, shouldRedirect] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,11 +17,11 @@ const Login = ({ originPage }) => {
       .then(response => response.json())
       .then(response => {
         if (response.errors) alert(JSON.stringify(response.errors));
-        else onRedirect(true);
+        else shouldRedirect(true);
       })
   };
 
-  return !shouldRedirect ?
+  return !redirect ?
     <div id="login">
       <form onSubmit={handleSubmit}>
         <input required type="email" value={email} placeholder="Email" onChange={e => setEmail(e.target.value)}></input>
