@@ -1,9 +1,9 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import auth from '../helpers/authenticateUser.js';
 
-const PrivateComponent = ({ component }) => {
-  return auth() ? component : <Redirect to = '/login'/>
+const PrivateComponent = (component) => {
+  return React.createElement(component);
 };
 
 export default PrivateComponent;
