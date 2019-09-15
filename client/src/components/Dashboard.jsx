@@ -8,7 +8,6 @@ import Profile from './Profile.jsx';
 import PrivateComponent from './PrivateComponent.jsx';
 
 const Dashboard = () => {
-  console.log('DASHBOARD IS RENDERED!')
   return (
     <Router>
       <Sidebar />
