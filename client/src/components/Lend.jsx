@@ -1,10 +1,7 @@
 import React from 'react';
 
-class Lend extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Lend = () => {
+  return <div></div>
 }
 
 export default Lend;
