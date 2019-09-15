@@ -68,7 +68,11 @@ router.post(
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
-          else res.cookie('access_token', token, {httpOnly: true, signed: true}).send({success: true});
+          else res
+          .cookie('access_token', token, {httpOnly: true, signed: true})
+          .cookie('logged_in', true)
+          .cookie('user_information', {name: user.name, accountType: null}, {signed: true})
+          .send({success: true});
         }
       );
     } catch (err) {
