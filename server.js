@@ -1,5 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const cookieParser = require('cookie-parser');
+const auth = require('./middleware/auth');
+const path = require('path');
 
 const app = express();
 
@@ -7,17 +10,19 @@ const app = express();
 connectDB();
 
 //Initialize Express Middleware
+app.use(cookieParser('thisisthesecret'));
 app.use(express.json({ extended: false }));
 
 //Serve static files
 app.use(express.static('./client/dist'));
 
-app.get('/', (req, res) => res.send('API Running'));
-
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/login', require('./routes/api/login'));
 app.use('/api/borrower', require('./routes/api/borrower'));
+
+//Routes for React Router
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname, './client/dist/index.html')));
 
 const PORT = process.env.PORT || 5000;
 

@@ -3,39 +3,25 @@ import ReactDOM from 'react-dom';
 import Register from './components/Register.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Login from './components/Login.jsx';
-import Build from './components/Build.jsx';
-import Lend from './components/Lend.jsx';
-import Borrow from './components/Borrow.jsx';
+import Dashboard from './components/Dashboard.jsx';
 import PrivateComponent from './components/PrivateComponent.jsx';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Router>
-        <Sidebar/>
-        <div id="dev_links">
-          <Link to="/login">login</Link><br/>
-          <Link to="/register">register</Link><br/>
-          <Link to="/build">build</Link><br/>
-          <Link to="/borrow">borrow</Link><br/>
-          <Link to="/lend">lend</Link><br/>
-        </div>
-        <div id="main">
-          <Route path = '/register' component={Register}></Route>
-          <Route path = '/login' component={Login}></Route>
-          <Route path = '/build' render={() => <PrivateComponent component={Build}/>}></Route>
-          <Route path = '/borrow' render={() => <PrivateComponent component={Borrow}/>}></Route>
-          <Route path = '/lend' render={() => <PrivateComponent component={Lend}/>}></Route>
-        </div>
-      </Router>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Router>
+      <Sidebar />
+      <div className="dev_links">
+        <Link to="/login">login</Link><br />
+        <Link to="/register">register</Link><br />
+      </div>
+      <div id="main">
+        <Route exact path='/register' component={Register}></Route>
+        <Route exact path='/login' component={Login}></Route>
+        <Route exact path='/dashboard' render={() => PrivateComponent(Dashboard)}></Route>
+      </div>
+    </Router>
+  );
+};
 
 export default App;

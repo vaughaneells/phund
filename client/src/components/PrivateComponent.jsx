@@ -1,9 +1,8 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import auth from '../helpers/authenticateUser.js';
+import { Redirect, Route } from 'react-router-dom';
 
-const PrivateComponent = ({ component }) => {
-  return auth() ? component : <Redirect to = '/login'/>
+const PrivateComponent = (component) => {
+  return document.cookie.includes('logged_in=true') ? React.createElement(component) : <Redirect to='/login'/>
 };
 
 export default PrivateComponent;
