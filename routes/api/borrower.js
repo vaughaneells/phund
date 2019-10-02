@@ -11,8 +11,8 @@ const db = config.get('mongoURI');
 const Borrower = require('../../models/Borrower');
 const User = require('../../models/User');
 const Completed_Loans = require('../../models/Completed_Loans');
-
-//@route GET api/profile/me
+/*
+//@route GET api/borrower/me
 //@desc Get current users profile
 //@access Private
 router.get('/me', auth, async (req, res) => {
@@ -30,8 +30,9 @@ router.get('/me', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+*/
 
-//@route POST api/borrower
+//@route POST api/borrower/design
 //@desc design or update a loan
 //@access Private
 router.post('/design', auth, async (req, res) => {
@@ -165,7 +166,7 @@ router.post('/design', auth, async (req, res) => {
   }
 });
 
-//@route PUT api/borrower
+//@route PUT api/borrower/update
 //@desc update loan status fromn payments
 //@access Private
 router.put('/update', auth, async (req, res) => {
