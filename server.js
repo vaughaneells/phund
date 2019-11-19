@@ -22,6 +22,10 @@ app.use(express.static('./client/dist'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/login', require('./routes/api/login'));
 app.use('/api/borrower', require('./routes/api/borrower'));
+<<<<<<< HEAD
+=======
+//app.use('/api/plaid', plaid);
+>>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
 
 // Get the public token and exchange it for an access token
 app.post('/public_token', receivePublicToken);

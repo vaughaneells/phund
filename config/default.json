@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "mongoURI": "mongodb+srv://vaughan18:pHuNd2019%24!@phunddb-p7v2c.mongodb.net/test?retryWrites=true&w=majority",
+=======
+  "mongoURI": "mongodb://localhost:27017/phund",
+>>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
   "jwtSecret": "nekottercesyrev678",
 
   "LoanRegs": {

@@ -11,6 +11,7 @@
   "author": "Vaughan Eells, Will Resen",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -18,11 +19,17 @@
     "config": "^3.1.0",
     "cookie-parser": "^1.4.4",
     "deasync": "^0.1.15",
+=======
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "cookie-parser": "^1.4.4",
+>>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
     "express": "^4.17.1",
     "express-validator": "^6.1.1",
     "gravatar": "^1.8.0",
     "history": "^4.9.0",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< HEAD
     "material-table": "^1.50.0",
     "moment": "^2.24.0",
     "mongoose": "^5.6.4",
@@ -32,6 +39,11 @@
     "react-dom": "^16.9.0",
     "react-plaid-link": "^1.5.0",
     "react-plaid-link-button": "0.0.4",
+=======
+    "mongoose": "^5.6.4",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+>>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
     "react-router-dom": "^5.0.1",
     "request": "^2.88.0",
     "styled-components": "^4.3.2",

@@ -88,6 +88,7 @@ const BorrowerSchema = new mongoose.Schema({
   },
   payment_successful: {
     type: Boolean
+<<<<<<< HEAD
   },
 
   //Plaid requirements
@@ -114,6 +115,8 @@ const BorrowerSchema = new mongoose.Schema({
   },
   accountSubtype: {
     type: String
+=======
+>>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
   }
 });
 
