@@ -1,0 +1,17 @@
+{
+  "mongoURI": "mongodb://localhost:27017/phund",
+  "jwtSecret": "nekottercesyrev678",
+
+  "LoanRegs": {
+    "CA": {
+      "max_amount": 1000,
+      "max_installments": 12,
+      "apr": 25
+    },
+    "AZ": {
+      "max_amount": 1000,
+      "max_installments": 12,
+      "apr": 25
+    }
+  }
+}
