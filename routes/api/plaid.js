@@ -55,28 +55,33 @@ const receivePublicToken = (req, res) => {
   });
 };
 
-const getTransactions = (req, res) => {
+const getTransactions = async (req, res) => {
   // Pull transactions for the last 30 days
+
+  var bankData = {};
+  var done = false;
+
   let startDate = moment()
     .subtract(30, 'days')
     .format('YYYY-MM-DD');
   let endDate = moment().format('YYYY-MM-DD');
-  console.log('made it past variables');
   client.getTransactions(
     ACCESS_TOKEN,
     startDate,
     endDate,
     {
-      count: 250,
+      count: 2,
       offset: 0
     },
     function(error, transactionsResponse) {
-      res.json({ transactions: transactionsResponse });
-      // TRANSACTIONS LOGGED BELOW!
-      // They will show up in the terminal that you are running nodemon in.
-      console.log(transactionsResponse);
+      bankData = transactionsResponse;
+      done = true;
     }
   );
+  require('deasync').loopWhile(function() {
+    return !done;
+  });
+  return bankData;
 };
 
 module.exports = {
