@@ -1,26 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../../middleware/auth');
+//const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
-<<<<<<< HEAD
 const zc = require('zipcodes');
-=======
-const zipcodes = require('zipcodes');
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
 const config = require('config');
 const connectDB = require('../../config/db');
 const mongoose = require('mongoose');
 const db = config.get('mongoURI');
-<<<<<<< HEAD
 const plaid = require('./plaid');
-=======
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
-
+const { PythonShell } = require('python-shell');
 const Borrower = require('../../models/Borrower');
 const User = require('../../models/User');
 const Completed_Loans = require('../../models/Completed_Loans');
 
-<<<<<<< HEAD
 /*****************************************************************************************/
 
 //@route POST api/borrower/location
@@ -28,32 +20,7 @@ const Completed_Loans = require('../../models/Completed_Loans');
 //@access Private
 
 //STILL NEEDS TO CROSS REFERENCE STATE LOAN PARAMTERES
-router.post('/location', auth, async (req, res) => {
-=======
-//@route GET api/profile/me
-//@desc Get current users profile
-//@access Private
-router.get('/me', auth, async (req, res) => {
-  try {
-    const borrower = await Borrower.findOne({ borrowers: req.user });
-    if (!borrower) {
-      return res
-        .status(400)
-        .json({ msg: 'This user does not have an active loan' });
-    }
-
-    res.json(borrower);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-});
-
-//@route POST api/borrower
-//@desc design or update a loan
-//@access Private
-router.post('/design', auth, async (req, res) => {
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
+router.post('/location', async (req, res) => {
   //Check for body errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -69,16 +36,12 @@ router.post('/design', auth, async (req, res) => {
   if (!current_borrower.length == 0) {
     return res.send('User already has an active loan');
   }
-<<<<<<< HEAD
   //Loan Paramters set by state
   var loanParam = [];
-=======
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
 
   //Receive loan amount, number of months, and zipcode from user
   const { loan_amount, months, zipcode } = req.body;
 
-<<<<<<< HEAD
   //State Parameters
   var supported = false;
   var max_amount = 0;
@@ -132,69 +95,59 @@ router.post('/design', auth, async (req, res) => {
 //@desc Approves or Denies the applicant
 //@access Private
 
-router.post('/underwrite', auth, async (req, res) => {
+router.post('/underwrite', async (req, res) => {
   //Check for body errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
 
+  let approved = false;
+
   //Receive loan amount, number of months, and zipcode from /location
   const { loan_amount, months, zipcode } = req.body;
 
-  var approved = false; //approval decision
-  var done = false;
+  var trans_amount = []; //Individual transaction amount
+  var trans_date = []; //Individual transaction date
 
-  async function underwrite() {
-    var spawn = require('child_process').spawn;
+  var bankData = plaid.getTransactions();
 
-    var trans_amount = []; //Individual transaction amount
-    var trans_date = []; //Individual transaction date
+  var trans_num = bankData.total_transactions; //Total number of transactions
+  var primary_balance = bankData.accounts[0].balances.available; //Balance of primary (first) account
 
-    var bankData = await plaid.getTransactions();
+  var trans_amount = []; //Individual transaction amounts
+  for (var i = 0; i < bankData.transactions.length; i++) {
+    trans_amount[i] = bankData.transactions[i].amount;
+  }
 
-    var trans_num = bankData.total_transactions; //Total number of transactions
-    var primary_balance = bankData.accounts[0].balances.available; //Balance of primary (first) account
+  var trans_date = []; //Individual transaction dates
+  for (var i = 0; i < bankData.transactions.length; i++) {
+    trans_date[i] = bankData.transactions[i].date;
+  }
 
-    var trans_amount = []; //Individual transaction amounts
-    for (var i = 0; i < bankData.transactions.length; i++) {
-      trans_amount[i] = bankData.transactions[i].amount;
-    }
-
-    var trans_date = []; //Individual transaction dates
-    for (var i = 0; i < bankData.transactions.length; i++) {
-      trans_date[i] = bankData.transactions[i].date;
-    }
-
-    var process = spawn('python', [
-      '././underwriting/underwriting.py',
+  let options = {
+    mode: 'text',
+    pythonPath: '/usr/local/bin/python3',
+    pythonOptions: ['-u'], // get print results in real-time
+    scriptPath: './underwriting/',
+    args: [
       primary_balance,
       trans_num,
       trans_amount,
       trans_date,
       loan_amount,
       months
-    ]);
+    ]
+  };
 
-    //var process = spawn('python', ['././underwriting/underwriting.py']);
-
-    await process.stdout.on('data', function(data) {
-      console.log(data.toString());
-      var val = JSON.parse(data.toString());
-      approved = val;
-      done = true;
-    });
-    require('deasync').loopWhile(function() {
-      return !done;
-    });
-
-    console.log('Approved: ' + approved);
-    console.log(typeof approved);
-    return approved;
-  }
+  PythonShell.run('underwriting.py', options, function(err, results) {
+    if (err) throw err;
+    // results is an array consisting of messages collected during execution
+    approved = JSON.parse(results[0].toString());
+  });
 
   try {
-    //LAST SPOT LEFT OFF. NEED TO FICGUREOUT HOW TO ACCESS APPROVED BOOLEAN VARIABLE
+    //LAST SPOT LEFT OFF. NEED TO FICGUREOUT HOW TO GET APPROVE VARIABLE AFTER UNDERWRITING
     if (true) {
       res.json({
         approved: true,
@@ -217,7 +170,7 @@ router.post('/underwrite', auth, async (req, res) => {
 //@route POST api/borrower/design
 //@desc design or update a loan
 //@access Private
-router.post('/design', auth, async (req, res) => {
+router.post('/design', async (req, res) => {
   //Check for body errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -324,7 +277,7 @@ router.post('/design', auth, async (req, res) => {
 //@route PUT api/borrower/update
 //@desc update loan status from payments
 //@access Private
-router.put('/confirm', auth, async (req, res) => {
+router.put('/confirm', async (req, res) => {
   //Check for body errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -342,110 +295,6 @@ router.put('/confirm', auth, async (req, res) => {
   try {
     if (confirm) {
       borrower.issue_date = Date.now();
-=======
-  //Build Loan
-  const loan_Fields = {};
-  let supported = false;
-
-  loanState = zipcodes.lookup(zipcode).state;
-  let supported_states = config.get('LoanRegs');
-  const states = Array.from(Object.keys(config.get('LoanRegs')));
-  let loanParam = [];
-  let max_amount = 0;
-  let max_installments = 0;
-  let max_apr = 0;
-
-  //Checks to see if the state is a supported
-  for (let i = 0; i < states.length; i++) {
-    if (states[i] === loanState) {
-      supported = true;
-      loanParam = Object.values(supported_states[loanState]);
-      max_amount = loanParam[0];
-      max_installments = loanParam[1];
-      max_apr = loanParam[2];
-      break;
-    }
-  }
-  if (!supported) {
-    console.log(loanParam);
-    res.send('State not supported');
-  }
-
-  //Create Installment Dates
-
-  let temp_date = new Date();
-  let first_month;
-  let first_year;
-  if (temp_date.getDate() >= 19) {
-    first_month = temp_date.getMonth() + 1;
-    if (first_month === 0) {
-      first_year = temp_date.getFullYear() + 1;
-    } else {
-      first_year = temp_date.getFullYear();
-    }
-  } else {
-    first_month = temp_date.getMonth();
-    first_year = temp_date.getFullYear();
-  }
-
-  const upcoming_date = new Date(first_year, first_month, 26);
-
-  let installment_dates = [];
-  installment_dates[0] = upcoming_date;
-
-  for (i = 1; i < months; i++) {
-    installment_dates[i] = new Date(
-      upcoming_date.getFullYear(),
-      upcoming_date.getMonth() + i,
-      26
-    );
-  }
-
-  //Create installment amount and total amount
-  let installment_amount = [];
-
-  for (i = 0; i < months; i++) {
-    if (loan_amount % months != 0) {
-      installment_amount[i] =
-        Math.trunc((loan_amount / months + 10.01) * 100) / 100;
-    } else {
-      installment_amount[i] = loan_amount / months + 10;
-    }
-  }
-
-  let original_total_amount = installment_amount.reduce(
-    (total, amount) => total + amount
-  );
-
-  //Calculate APR
-  let total_fees = original_total_amount - loan_amount;
-  let apr = (total_fees / original_total_amount) * 100;
-
-  //Populate loan fields for Borrower Profile
-  loan_Fields.loan_amount = loan_amount;
-  loan_Fields.months = months;
-  loan_Fields.user = req.user.id;
-  loan_Fields.original_total_amount =
-    Math.trunc(original_total_amount * 100) / 100;
-  loan_Fields.current_total_amount = loan_Fields.original_total_amount;
-  loan_Fields.issue_date = Date.now();
-  loan_Fields.balance = Math.trunc(original_total_amount * 100) / 100;
-  loan_Fields.zipcode = zipcode;
-  loan_Fields.approved = true;
-  loan_Fields.borrower_status = true;
-  loan_Fields.apr = parseFloat(apr.toFixed(2));
-  loan_Fields.installment_amount = installment_amount;
-  loan_Fields.upcoming_date = upcoming_date;
-  loan_Fields.installment_dates = installment_dates;
-  loan_Fields.name = user.name;
-
-  try {
-    //Create borrower profile
-
-    if (supported) {
-      loan_Fields.issue_date = Date.now();
-      let borrower = new Borrower(loan_Fields);
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
       await borrower.save();
       res.json(borrower);
     }
@@ -455,17 +304,12 @@ router.put('/confirm', auth, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 /*****************************************************************************************/
 
 //@route PUT api/borrower/update
 //@desc update loan status from payments
-=======
-//@route PUT api/borrower
-//@desc update loan status fromn payments
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
 //@access Private
-router.put('/update', auth, async (req, res) => {
+router.put('/update', async (req, res) => {
   let borrower = await Borrower.findOne({ user: req.user.id });
 
   let payment = req.body.payment_successful;

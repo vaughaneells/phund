@@ -1,7 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser');
-const auth = require('./middleware/auth');
 const path = require('path');
 const plaid = require('./routes/api/plaid');
 const { receivePublicToken, getTransactions } = require('./routes/api/plaid');
@@ -12,20 +11,18 @@ const app = express();
 connectDB();
 
 //Initialize Express Middleware
-app.use(cookieParser('thisisthesecret'));
+app.use(cookieParser('thisisthecookiesecret'));
 app.use(express.json({ extended: false }));
 
 //Serve static files
 app.use(express.static('./client/dist'));
 
 //Define Routes
-app.use('/api/users', require('./routes/api/users'));
+app.use('/api/register', require('./routes/api/register'));
 app.use('/api/login', require('./routes/api/login'));
 app.use('/api/borrower', require('./routes/api/borrower'));
-<<<<<<< HEAD
-=======
-//app.use('/api/plaid', plaid);
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
+app.use('/api/refresh', require('./routes/api/refresh_token'));
+app.use('/api/user', require('./routes/api/user'));
 
 // Get the public token and exchange it for an access token
 app.post('/public_token', receivePublicToken);

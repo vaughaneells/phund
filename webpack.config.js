@@ -4,7 +4,7 @@ module.exports = {
   entry: path.resolve(__dirname, './client/src/index.js'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './client/dist'),
+    path: path.resolve(__dirname, './client/dist')
   },
   module: {
     rules: [
@@ -18,5 +18,11 @@ module.exports = {
         }
       }
     ]
+  },
+  externals: {
+    // global app config object
+    config: JSON.stringify({
+      apiUrl: 'http://localhost:5000'
+    })
   }
 };

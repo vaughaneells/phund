@@ -4,7 +4,10 @@ var plaid = require('plaid');
 const moment = require('moment');
 const mongoose = require('mongoose');
 const router = express.Router();
-const auth = require('../../middleware/auth');
+const jwt = require('jsonwebtoken');
+const config = require('config');
+const cookieParser = require('cookie-parser');
+const cookie = require('js-cookie');
 
 // Load Borrower and User models
 const User = require('../../models/User');
@@ -29,10 +32,12 @@ var client = new plaid.Client(
   { version: '2019-05-29', clientApp: 'Plaid Quickstart' }
   //plaid.environments.sandbox
 );
+var keys = ['this is the plaid secret'];
 
-const receivePublicToken = (req, res) => {
+const receivePublicToken = async (req, res) => {
   // First, receive the public token and set it to a variable
   let PUBLIC_TOKEN = req.body.public_token;
+  let payload;
   // Second, exchange the public token for an access token
   client.exchangePublicToken(PUBLIC_TOKEN, function(error, tokenResponse) {
     if (error != null) {
@@ -44,18 +49,11 @@ const receivePublicToken = (req, res) => {
       });
     }
     ACCESS_TOKEN = tokenResponse.access_token;
-    ITEM_ID = tokenResponse.item_token;
-    res.json({
-      access_token: ACCESS_TOKEN,
-      item_id: ITEM_ID
-    });
-    console.log('access and public token below');
-    console.log(PUBLIC_TOKEN);
-    console.log(ACCESS_TOKEN);
+    ITEM_ID = tokenResponse.item_id;
   });
 };
 
-const getTransactions = async (req, res) => {
+const getTransactions = (req, res) => {
   // Pull transactions for the last 30 days
 
   var bankData = {};
@@ -88,67 +86,3 @@ module.exports = {
   receivePublicToken,
   getTransactions
 };
-
-/*
-// @route POST api/plaid/bank_account/add
-// @desc Trades public token for access token and stores credentials in database
-// @access Private
-router.post('/bank_account/add', auth, (req, res) => {
-  PUBLIC_TOKEN = req.body.public_token;
-  const institution = req.body.metadata.institution;
-  const { name, institution_id } = institution;
-
-  if (PUBLIC_TOKEN) {
-    client.exchangePublicToken(PUBLIC_TOKEN).then(exchangeResponse => {
-      ACCESS_TOKEN = exchangeResponse.access_token;
-      ITEM_ID = exchangeResponse.item_id;
-
-      let borrower = Borrower.findOne({ user: req.user.id });
-      if (borrower) {
-        (borrower.accessToken = ACCESS_TOKEN),
-          (borrower.itemId = ITEM_ID),
-          (borrower.institutionId = institution_id),
-          (borrower.institutionName = name);
-        borrower
-          .save()
-          .then(borrower => res.json(borrower))
-          .catch(err => console.log(err)); // Mongo Error
-      } else {
-        err => console.log(err);
-      } // Plaid Error
-    });
-  }
-});
-
-// @route POST api/plaid/bank_account/transactions
-// @desc Fetch transactions from past 30 days from all linked accounts
-// @access Private
-router.post('/bank_account/transactions', auth, (req, res) => {
-  const now = moment();
-  const today = now.format('YYYY-MM-DD');
-  const thirtyDaysAgo = now.subtract(30, 'days').format('YYYY-MM-DD'); // Change this if you want more transactions
-  let transactions = [];
-  const accounts = req.body;
-  if (accounts) {
-    accounts.forEach(function(account) {
-      ACCESS_TOKEN = account.accessToken;
-      const institutionName = account.institutionName;
-      client
-        .getTransactions(ACCESS_TOKEN, thirtyDaysAgo, today)
-        .then(response => {
-          transactions.push({
-            accountName: institutionName,
-            transactions: response.transactions
-          });
-          // Don't send back response till all transactions have been added
-          if (transactions.length === accounts.length) {
-            res.json(transactions);
-          }
-        })
-        .catch(err => console.log(err));
-    });
-  }
-});
-*/
-
-//module.exports = router;

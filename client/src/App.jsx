@@ -1,52 +1,77 @@
+/*The app component is the root component for the react tutorial application, 
+it contains the outer html, routes and global alert notification for the example 
+app.If the url path doesn't match any route there is a default redirect defined 
+below the routes that redirects the user to the home page. */
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Register from './components/Register.jsx';
-import Sidebar from './components/Sidebar.jsx';
-import Login from './components/Login.jsx';
-import Dashboard from './components/Dashboard.jsx';
-import PrivateComponent from './components/PrivateComponent.jsx';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import Plaid from './components/Plaid.jsx';
-=======
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
+import { Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const App = () => {
-  return (
-    <Router>
-      <Sidebar />
-<<<<<<< HEAD
-      <div className='dev_links'>
-        <Link to='/login'>login</Link>
-        <br />
-        <Link to='/register'>register</Link>
-        <br />
-        <Link to='/plaid'>plaid</Link>
-        <br />
-      </div>
-      <div id='main'>
-        <Route exact path='/register' component={Register}></Route>
-        <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/plaid' component={Plaid}></Route>
+import { history, jwt_token } from './_helpers';
+import { alertActions, userActions } from './_actions';
+import {
+  PrivateRoute,
+  Login,
+  LandingPage,
+  Register,
+  Dashboard
+} from './_components';
 
-        <Route
-          exact
-          path='/dashboard'
-          render={() => PrivateComponent(Dashboard)}
-        ></Route>
-=======
-      <div className="dev_links">
-        <Link to="/login">login</Link><br />
-        <Link to="/register">register</Link><br />
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { renderChild: true };
+    this.handleChildUnmount = this.handleChildUnmount.bind(this);
+
+    !history.listen((location, action) => {
+      // clear alert on location change
+      this.props.clearAlerts();
+    });
+  }
+
+  changeRenderChildState() {
+    this.state = { renderChild: false };
+  }
+
+  handleChildUnmount() {
+    this.setState({ renderChild: false });
+  }
+
+  render() {
+    const { alert } = this.props;
+    return (
+      <div className='jumbotron'>
+        <div className='container'>
+          <div className='col-sm-8 col-sm-offset-2'>
+            {alert.message && (
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
+            )}
+            <Router history={history}>
+              <Switch>
+                <LandingPage exact path='/' />
+                <Route path='/login' component={Login} />
+                <Route path='/register' component={Register} />
+                <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              </Switch>
+            </Router>
+          </div>
+        </div>
       </div>
-      <div id="main">
-        <Route exact path='/register' component={Register}></Route>
-        <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/dashboard' render={() => PrivateComponent(Dashboard)}></Route>
->>>>>>> 5c4733470d2d25dc319b0d13533292f59b6b41f9
-      </div>
-    </Router>
-  );
+    );
+  }
+}
+
+function mapState(state) {
+  const { alert } = state;
+  const { loggedIn, token } = state.authentication;
+  return { alert, loggedIn, token };
+}
+
+const actionCreators = {
+  clearAlerts: alertActions.clear,
+  logout: userActions.logout
 };
 
-export default App;
+const connectedApp = connect(mapState, actionCreators)(App);
+export { connectedApp as App };
