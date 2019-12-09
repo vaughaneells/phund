@@ -109,6 +109,10 @@ function user() {
   }
 }
 
+function refreshRequest() {
+  return { type: userConstants.GETUSER_REQUEST };
+}
+
 function refresh() {
   return dispatch => {
     dispatch(request());
