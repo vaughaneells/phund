@@ -15,26 +15,19 @@ router.get('/', async (req, res) => {
     token = token.slice(7, token.length);
   }
 
-  console.log('Token from User.js');
-  console.log(token);
-
   const id = auth_tools.getId(token);
 
-  console.log('user api. next is id');
-  console.log(id);
-
   try {
-    let user = await User.findById({ _id: id })
+    let user = await User.findOne({ _id: id })
       .select('-password')
       .select('-refresh_token_data')
       .select('-_v')
       .select('-lastName');
-    console.log('User info from user.js');
-    //console.log(user);
     res.json({ user });
+    console.log('user.js successful');
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Error in get login.js');
+    res.status(500).send('Error in get user.js');
   }
 });
 

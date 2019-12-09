@@ -23,9 +23,10 @@ router.post('/', async (req, res) => {
 
     if (!user) {
       return res.status(400).json({ errors: [{ msg: 'Invalid Token' }] });
-    } else {
-      console.log(user);
     }
+    console.log('user passed into generate token function');
+    console.log(user);
+    console.log('');
 
     const jwt_token = auth_tools.generateJwtToken(user);
     const jwt_token_expiry = new Date(
@@ -35,15 +36,11 @@ router.post('/', async (req, res) => {
     //persists refresh token data to db
     const new_refresh_token = uuidv4();
     user.refresh_token_data.refresh_token = new_refresh_token;
-    user.refresh_token_data.user_id = user.id;
     user.refresh_token_data.expires_at = new Date(
       new Date().getTime() + config.get('REFRESH_TOKEN_EXPIRES') * 60 * 1000
     ); // convert from minutes to milli seconds
 
     await user.save();
-    console.log('New JWT');
-    console.log(jwt_token);
-    console.log('');
     res
       .status(200)
 
@@ -57,6 +54,7 @@ router.post('/', async (req, res) => {
         jwt_token,
         jwt_token_expiry
       });
+    console.log('refresh_token.js successful');
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
