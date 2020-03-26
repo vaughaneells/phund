@@ -1,9 +1,13 @@
 {
   "mongoURI": "mongodb+srv://vaughan18:pHuNd2019%24!@phunddb-p7v2c.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "nekottercesyrev678",
-  "REFRESH_TOKEN_EXPIRES": 43200,
-  "JWT_TOKEN_EXPIRES": 15,
-  "JWT_ALGORITHM": "HS256",
+
+  "cookieMaxAge": 1800000,
+
+  "PLAID_CLIENT_ID": "5d892675f35d3500140c45e4",
+  "PLAID_SECRET": "2541e0deaa80d3a2434c22eb12cd87",
+  "PLAID_PUBLIC_KEY": "72736b631ccd47ae214cd32013b715",
+  "PLAID_ENV": "sandbox",
 
   "LoanRegs": {
     "CA": {

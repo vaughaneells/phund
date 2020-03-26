@@ -22,7 +22,9 @@ module.exports = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      apiUrl: 'http://localhost:5000'
+      apiUrl: 'http://localhost:3000',
+      truliooUrl: 'https://gateway.trulioo.com/trial',
+      truliooKey: '5d657c2582074bc596d82ea1c4ca7a32'
     })
   }
 };

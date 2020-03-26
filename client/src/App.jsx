@@ -4,59 +4,54 @@ app.If the url path doesn't match any route there is a default redirect defined
 below the routes that redirects the user to the home page. */
 
 import React from 'react';
-import { Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { Router, Route, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { history, jwt_token } from './_helpers';
-import { alertActions, userActions } from './_actions';
+import { history } from './helpers';
+import { alertActions, userActions } from './actions';
 import {
   PrivateRoute,
   Login,
-  LandingPage,
+  Landing,
   Register,
-  Dashboard
-} from './_components';
+  Home,
+  Build,
+  Borrow,
+  Lend,
+  Plaid,
+  TestComponent
+} from './components';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { renderChild: true };
-    this.handleChildUnmount = this.handleChildUnmount.bind(this);
+    this.state = {
+      prevLocation: ''
+    };
 
     !history.listen((location, action) => {
-      // clear alert on location change
-      this.props.clearAlerts();
+      //this.state.prevLocation = location.pathname;
     });
-  }
-
-  changeRenderChildState() {
-    this.state = { renderChild: false };
-  }
-
-  handleChildUnmount() {
-    this.setState({ renderChild: false });
   }
 
   render() {
     const { alert } = this.props;
     return (
-      <div className='jumbotron'>
-        <div className='container'>
-          <div className='col-sm-8 col-sm-offset-2'>
-            {alert.message && (
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
-            )}
-            <Router history={history}>
-              <Switch>
-                <LandingPage exact path='/' />
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
-                <PrivateRoute exact path='/dashboard' component={Dashboard} />
-              </Switch>
-            </Router>
-          </div>
-        </div>
+      <div>
+        {alert.message && <div>{alert.message}</div>}
+        <Router history={history}>
+          <Switch>
+            <PrivateRoute path='/home' component={Home} {...this.props} />
+            <PrivateRoute path='/borrow' component={Borrow} {...this.props} />
+            <PrivateRoute path='/build' component={Build} {...this.props} />
+            <PrivateRoute path='/lend' component={Lend} {...this.props} />
+            <Route exact path='/test' component={TestComponent} />
+            <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+            <Route exact path='/' component={Landing} />
+          </Switch>
+        </Router>
       </div>
     );
   }
@@ -64,8 +59,8 @@ class App extends React.Component {
 
 function mapState(state) {
   const { alert } = state;
-  const { loggedIn, token } = state.authentication;
-  return { alert, loggedIn, token };
+  const { loggedIn } = state.authentication;
+  return { alert, loggedIn, state };
 }
 
 const actionCreators = {
