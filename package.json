@@ -8,9 +8,10 @@
     "server": "nodemon server",
     "build": "webpack -dw"
   },
-  "author": "Vaughan Eells, Will Resen",
+  "author": "Vaughan Eells",
   "license": "ISC",
   "dependencies": {
+    "antd": "^4.6.4",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -20,6 +21,7 @@
     "cookie": "^0.4.1",
     "cookie-parser": "^1.4.5",
     "cookies": "^0.8.0",
+    "css-loader": "^4.3.0",
     "date-fns": "^2.8.1",
     "deasync": "^0.1.20",
     "express": "^4.17.1",
@@ -45,6 +47,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "request": "^2.88.2",
+    "style-loader": "^1.2.1",
     "styled-components": "^4.4.1",
     "trulioo-react": "^1.4.0",
     "zipcodes": "^8.0.0"
