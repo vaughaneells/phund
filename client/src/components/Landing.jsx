@@ -1,6 +1,6 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Divider } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { history } from "../helpers";
@@ -66,6 +66,7 @@ class Landing extends React.Component {
                 
                 <DivImage></DivImage>
                 <MenuFooter>HEY THERE</MenuFooter>
+                <Divider type="horizontal" style={{ height: "100px", color: "#D0E8F9" }} />
               </div>
             </Footer>
           </Layout>

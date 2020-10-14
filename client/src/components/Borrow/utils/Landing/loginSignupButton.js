@@ -10,12 +10,12 @@ function ButtonGroup() {
     marginLeft: "30",
     marginRight: "30",
     backgroundColor:'#3850B5',
-    borderRadius: "10",
+    borderRadius: "25px",
     borderWidth: "1",
     }
     return (
     
-    
+        
 
 
         <Button type="primary" style={styles}>Primary</Button>
