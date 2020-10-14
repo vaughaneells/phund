@@ -5,7 +5,7 @@ import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { history } from "../helpers";
 import { userActions } from "../actions";
-import DivImage from './Borrow/utils/SVG/DIVSix'
+import DivImage from './Borrow/utils/SVG/DIVSix';
 import MenuFooter from './Borrow/utils/Landing/MenuFooter'
 
 const { Header, Footer, Content } = Layout;
@@ -63,7 +63,7 @@ class Landing extends React.Component {
                   background: "#E7F4FD",
                 }}
               >
-                HELLLOOOO HIIIIIIIIIII
+                
                 <DivImage></DivImage>
                 <MenuFooter>HEY THERE</MenuFooter>
               </div>
