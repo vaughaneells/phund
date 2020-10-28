@@ -17,6 +17,22 @@ module.exports = {
           plugins: ['@babel/plugin-transform-runtime']
         }
       },
+         
+      {
+        test: /\.less$/,
+        use: [{
+            loader: "style-loader"
+        }, {
+            loader: "css-loader"
+        }, {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                webpackImporter: true
+              }
+            }
+        }]
+},
       {
         test: /\.css$/,
         use: ['style-loader','css-loader']
