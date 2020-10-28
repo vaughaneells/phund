@@ -22,7 +22,6 @@ router.post('/location', auth, async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  console.log('In the backend');
   try {
     //Connects user by id to borrow profile
     let user = await User.findOne({ _id: req.id }).select('-password');

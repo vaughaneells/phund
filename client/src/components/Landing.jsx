@@ -5,13 +5,13 @@ import { Router, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from '../helpers';
 import { userActions } from '../actions';
+import SVG from './SVG'
 
 const { Header, Footer, Content} = Layout;
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
-
     this.props.logout();
   }
   render() {
@@ -26,6 +26,19 @@ class Landing extends React.Component {
                   </Menu>
               </Header>
               <Content>DIV 1</Content>
+              <Content>DIV 2</Content>
+              <Content>DIV 3</Content>
+              <Content>DIV 4</Content>
+              <Content>
+                  <div style = {{
+                      width: "1680px",
+                      height: "1126px",
+                      left: "0px",
+                      top: "4274px",
+                      background: "#FFFFFF"
+                  }}></div>
+
+              </Content>
               <Footer>Footer</Footer>
             </Layout>
           </Router>

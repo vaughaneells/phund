@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 
 //NEED TO MAKE FRONTEND REDIRECT ON BAD CALL
+
+//Layer between the front end to the back
 module.exports = (req, res, next) => {
   //Verify token
   try {
