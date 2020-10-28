@@ -1,12 +1,14 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Layout, Menu, Divider } from "antd";
+import { Layout, Menu, Divider, Row, Col } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { history } from "../helpers";
 import { userActions } from "../actions";
-import DivImage from './Borrow/utils/SVG/DIVSix';
-import MenuFooter from './Borrow/utils/Landing/MenuFooter'
+import BottomFooter from './Borrow/utils/Landing/BottomFooter'
+
+
+
 
 const { Header, Footer, Content } = Layout;
 
@@ -17,6 +19,8 @@ class Landing extends React.Component {
     this.props.logout();
   }
   render() {
+
+    
     return (
       <div>
         <Router history={history}>
@@ -32,14 +36,7 @@ class Landing extends React.Component {
               </Menu>
             </Header>
             <Content>
-              <div
-                style={{
-                  background: "purple",
-                  height: "100px",
-                }}
-              >
-                text
-              </div>
+              
             </Content>
             <Content>
               <div style={{ background: "green", height: "100px" }}>text</div>
@@ -54,20 +51,9 @@ class Landing extends React.Component {
               <div style={{ background: "red", height: "100px" }}>text</div>
             </Content>
             <Footer>
-              <div
-                style={{
-                  width: "1680px",
-                  height: "1126px",
-                  left: "0px",
-                  top: "4274px",
-                  background: "#E7F4FD",
-                }}
-              >
-                
-                <DivImage></DivImage>
-                <MenuFooter>HEY THERE</MenuFooter>
-                <Divider type="horizontal" style={{ height: "100px", color: "#D0E8F9" }} />
-              </div>
+              <BottomFooter>
+
+              </BottomFooter>
             </Footer>
           </Layout>
         </Router>

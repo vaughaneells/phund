@@ -18,7 +18,7 @@ function ButtonGroup() {
         
 
 
-        <Button type="primary" style={styles}>Primary</Button>
+        <Button style={styles}>Primary</Button>
 
 
 
