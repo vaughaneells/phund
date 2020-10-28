@@ -5,7 +5,7 @@ import { Router, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from '../helpers';
 import { userActions } from '../actions';
-import SVG from './SVG'
+
 
 //const { Header, Footer, Content} = Layout;
 
