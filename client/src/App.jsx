@@ -22,7 +22,7 @@ import {
   TestComponent
 } from './components';
 import 'antd/lib/button/style';
-import './App.less';
+
 
 class App extends React.Component {
   constructor(props) {
