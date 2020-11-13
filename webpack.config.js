@@ -1,4 +1,7 @@
+
+
 const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, './client/src/index.js'),
@@ -6,6 +9,17 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './client/dist')
   },
+  watch: true,
+  plugins: [
+    new BrowserSyncPlugin({
+      // browse to http://localhost:3000/ during development,
+      // ./public directory is being served
+      host: 'localhost',
+      port: 3000,
+      server: { baseDir: [path.resolve(__dirname, './client/dist')] }
+    })
+  ],
+ 
   module: {
     rules: [
       {
@@ -28,7 +42,7 @@ module.exports = {
             loader: "less-loader",
             options: {
               lessOptions: {
-                webpackImporter: true
+                javascriptEnabled: true
               }
             }
         }]
