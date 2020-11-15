@@ -74,9 +74,7 @@ function PhundFooter() {
 
 
 </Row>
-<Row>
-    HEYYYY
-</Row>
+
 <Row
 justify="end"
 >

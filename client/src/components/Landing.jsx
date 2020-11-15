@@ -1,5 +1,5 @@
 import React from "react";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import { Layout, Menu, Divider, Row, Col } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
