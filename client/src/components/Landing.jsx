@@ -45,10 +45,10 @@ class Landing extends React.Component {
               <div style={{ background: "success", height: "100px" }}>text</div>
             </Content>
             <Content>
-              <div style={{ background: "red", height: "100px" }}>text</div>
+              <div style={{ background: "red", height: "100px" }}></div>
             </Content>
             <Content>
-              <div style={{ background: "red", height: "100px" }}>text</div>
+              <div style={{ background: "red", height: "100px" }}></div>
             </Content>
             <Footer>
               <BottomFooter>

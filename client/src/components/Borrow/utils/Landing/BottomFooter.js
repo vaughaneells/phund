@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Button, Row, Menu, Col} from 'antd'
+import {Button, Row, Menu, Col, Divider} from 'antd'
 import BlueLendButton from '../SVG/BlueLendButton'
 import RedBorrowButton from '../SVG/RedBorrowButton'
 import CloudImage from '../SVG/Cloud'
@@ -14,6 +14,7 @@ import {
     LinkedinOutlined,
     TwitterOutlined,
   } from '@ant-design/icons';
+import TriangleIcon from '../SVG/triangleIcon'
 
 
 
@@ -35,126 +36,111 @@ function PhundFooter() {
 
     return(
 
-<section className="bottom-footer">
-
-
-
+        <>
+        <Row>
+            <Col
+            xs={24}
+            lg={10}
+            >
+                <BlueLendButton>
+                </BlueLendButton>
+            </Col>
+            <Col>
+            </Col>
+            <Col
+            xs={24}
+            lg={10}>
+                <RedBorrowButton></RedBorrowButton>
+            </Col>
+        </Row>
+        <Row
+            justify="end"
+            >
+            <Col
+            span={4}>
+            <CloudImage></CloudImage>
+        </Col>
     
-
-
-<Row>
-    <Col
-    xs={24}
-    lg={10}
-    >
-    <BlueLendButton>
-
-
-
-
-    
-</BlueLendButton>
-    </Col>
-    <Col>
-    
-    <Row
-    >
-
+        </Row>
+        <Row
+            justify="center">
+            <h1>Do you have questions?</h1>
+        </Row>
+        <Row
+            justify="center"
+        >
+            <p>Peer to Peer lending for loans under $500</p>
+        </Row>
+        <Row
+            justify="center"
+            >
+            <Button style={Buttonstyles} size="large">Contact Us</Button> 
+        </Row>
+        <Row
+        justify="space-between" align="bottom"
+        >
+            <Col
+            span={4}
+            >
+            <PhundLogo>
+            </PhundLogo>  
+            </Col>
+            <Col
+            span={20}
+            >
+            <MainImage>
+            </MainImage>
+            </Col>
+        </Row>
         
-    </Row>
+        <Row
+            justify='center'
+            >
+    
+        <Menu
+            mode="horizontal"
+            > 
+            <Menu.Item>Products</Menu.Item>
+       
+            <Menu.Item>How it Works</Menu.Item>
+            <Menu.Item>Features</Menu.Item>
+            <Menu.Item>Learn</Menu.Item>
+            <Menu.Item>Partners</Menu.Item>
+            <Menu.Item>LOGIN</Menu.Item>
+            <SignupButton></SignupButton>  
+        </Menu>
         
-    </Col>
-    <Col
-   
-    xs={24}
-    lg={10}>
-        <RedBorrowButton></RedBorrowButton>
-    </Col>
-
-
-
-</Row>
-
-<Row
-justify="end"
->
+        </Row>
+        <Row>
+            <Divider>
+            </Divider>
+        </Row>
+        <Row>
+            <Col
+            span={4}
+            >
+            <Copyright>
+            </Copyright>
+            </Col>
+            <Col
+            span={16}
+            >
+            </Col>
+            <Col
+            span={4}
+            >
+            <InstagramOutlined style={{ fontSize: '22px', cursor: 'pointer' }} />
+            <LinkedinOutlined style={{ fontSize: '22px' }} />
+            <TwitterOutlined style={{ fontSize: '22px' }} />
+            </Col>
+            
+        </Row>
+           
     
-    <Col
-    span={4}>
-    <CloudImage></CloudImage>
-    </Col>
-    
-</Row>
-<Row
-justify="center">
-<h1>Do you have questions?</h1>
-       
-       
-</Row>
-<Row
-justify="center"
->
-    <p>Peer to Peer lending for loans under $500</p>
-    
-</Row>
-<Row
-justify="center"
->
-   <Button style={Buttonstyles} size="large">Contact Us</Button> 
-</Row>
-<Row
-justify="center"
->
-    <MainImage>
-
-    </MainImage>
-</Row>
-<Row>
-    <PhundLogo></PhundLogo>
-</Row>
-<Row>
-<Menu
-      mode="horizontal"
-       > 
-        <Menu.Item><PhundLogo></PhundLogo></Menu.Item>
-       <Menu.Item>Products</Menu.Item>
-       
-       <Menu.Item>How it Works</Menu.Item>
-       <Menu.Item>Features</Menu.Item>
-       <Menu.Item>Learn</Menu.Item>
-       <Menu.Item>Partners</Menu.Item>
-      
 
 
 
-
-      <Menu.Item>LOGIN</Menu.Item>
-      <SignupButton></SignupButton>
-         
-      
-
-
-
-
-      
-      </Menu>
-</Row>
-     <Row>
-         <Copyright>
-
-         </Copyright>
-
-         <InstagramOutlined />
-         
-         <LinkedinOutlined />
-         <TwitterOutlined />
-         
-         
-    </Row>   
-
-
-
-</section>
+</>
     )
 
 

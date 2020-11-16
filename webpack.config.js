@@ -47,6 +47,8 @@ module.exports = {
                                'border-radius-base': '2px',
                                'layout-body-background': '#E7F4FD',
                                'layout-footer-background': '#E7F4FD',
+                               'layout-footer-padding': '0px 0px',
+                               'menu-bg': '##E7F4FD',
                                
                              },
                     javascriptEnabled: true,
