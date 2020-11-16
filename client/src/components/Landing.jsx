@@ -1,5 +1,5 @@
 import React from "react";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import { Layout, Menu, Divider, Row, Col } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -45,10 +45,10 @@ class Landing extends React.Component {
               <div style={{ background: "success", height: "100px" }}>text</div>
             </Content>
             <Content>
-              <div style={{ background: "red", height: "100px" }}>text</div>
+              <div style={{ background: "red", height: "100px" }}></div>
             </Content>
             <Content>
-              <div style={{ background: "red", height: "100px" }}>text</div>
+              <div style={{ background: "red", height: "100px" }}></div>
             </Content>
             <Footer>
               <BottomFooter>

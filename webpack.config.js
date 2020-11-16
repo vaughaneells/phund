@@ -34,19 +34,29 @@ module.exports = {
          
       {
         test: /\.less$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader"
-        }, {
+    use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" },
+        {
             loader: "less-loader",
             options: {
-              lessOptions: {
-                javascriptEnabled: true
-              }
+                lessOptions: {
+                  modifyVars: {
+                               'primary-color': '#a57a1d',
+                               'link-color': '#a57a1d',
+                               'border-radius-base': '2px',
+                               'layout-body-background': '#E7F4FD',
+                               'layout-footer-background': '#E7F4FD',
+                               'layout-footer-padding': '0px 0px',
+                               'menu-bg': '##E7F4FD',
+                               
+                             },
+                    javascriptEnabled: true,
+                }
             }
-        }]
-},
+        }
+    ]
+      },
       {
         test: /\.css$/,
         use: ['style-loader','css-loader']

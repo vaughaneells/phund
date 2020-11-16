@@ -21,7 +21,7 @@ import {
   Plaid,
   TestComponent
 } from './components';
-import 'antd/lib/button/style';
+// import 'antd/lib/button/style';
 
 
 class App extends React.Component {

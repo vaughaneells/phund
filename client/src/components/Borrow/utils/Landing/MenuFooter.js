@@ -1,4 +1,4 @@
-import { Menu } from 'antd';
+import { Row } from 'antd';
 import React from 'react'
 import SignupButton from './loginSignupButton'
 import PhundLogo from '../SVG/PhundLogo'
@@ -9,13 +9,18 @@ import CloudImage from '../SVG/Cloud'
 
 function Foot() {
     return (
-      <div>
+      <>
+        <Row
+        justify='center'
+        >
+          <ArtIcon></ArtIcon>
+          <CloudImage></CloudImage>
+
+        </Row>
         
-        <ArtIcon></ArtIcon>
-        <CloudImage></CloudImage>
      
       
-      </div>
+      </>
     )
 }
 
