@@ -3,6 +3,7 @@
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
+
 module.exports = {
   entry: path.resolve(__dirname, './client/src/index.js'),
   output: {
@@ -41,15 +42,12 @@ module.exports = {
             loader: "less-loader",
             options: {
                 lessOptions: {
-                  modifyVars: {
-                               'primary-color': '#a57a1d',
-                               'link-color': '#a57a1d',
-                               'border-radius-base': '2px',
+                  modifyVars: {                               
                                'layout-body-background': '#E7F4FD',
                                'layout-footer-background': '#E7F4FD',
                                'layout-footer-padding': '0px 0px',
                                'menu-bg': '##E7F4FD',
-                               
+                               'font-family': 'Raleway, sans-serif',                               
                              },
                     javascriptEnabled: true,
                 }
