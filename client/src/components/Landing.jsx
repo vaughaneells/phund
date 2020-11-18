@@ -5,8 +5,9 @@ import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { history } from "../helpers";
 import { userActions } from "../actions";
-import BottomFooter from './Borrow/utils/Landing/BottomFooter'
-
+import BottomFooter from './Borrow/utils/Landing/DivSix'
+import DivFive from './Borrow/utils/Landing/DivFive'
+import DivFour from './Borrow/utils/Landing/DivFour'
 
 
 
@@ -39,16 +40,21 @@ class Landing extends React.Component {
               
             </Content>
             <Content>
-              <div style={{ background: "green", height: "100px" }}>text</div>
+              
             </Content>
             <Content>
-              <div style={{ background: "success", height: "100px" }}>text</div>
+              
             </Content>
-            <Content>
-              <div style={{ background: "red", height: "100px" }}></div>
+            <Content
+            style={{backgroundColor: "#2A2958"}}
+            >
+              <DivFour>
+              </DivFour>
             </Content>
-            <Content>
-              <div style={{ background: "red", height: "100px" }}></div>
+            <Content
+            style={{backgroundColor: '#FFFFFF'}}
+            >
+              <DivFive></DivFive>
             </Content>
             <Footer>
               <BottomFooter>
