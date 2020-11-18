@@ -23,7 +23,7 @@ router.post('/location', auth, async (req, res) => {
   }
 
   try {
-    //Connects user by id to borrow profile
+    //Connects user by id to create a their borrower profile
     let user = await User.findOne({ _id: req.id }).select('-password');
 
     if (user.role.user == 'borrower') {

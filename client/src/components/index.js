@@ -9,4 +9,3 @@ export * from './Borrow';
 export * from './Lend.jsx';
 export * from './Borrow/';
 export * from './TestComponent.jsx';
-export * from './SVG/';

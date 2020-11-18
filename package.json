@@ -32,6 +32,7 @@
     "jsonwebtoken": "^8.5.1",
     "material-table": "^1.50.0",
     "mongoose": "^5.10.0",
+    "package.json": "^2.0.1",
     "plaid": "^4.11.0",
     "prop-types": "^15.7.2",
     "python-shell": "^1.0.8",
