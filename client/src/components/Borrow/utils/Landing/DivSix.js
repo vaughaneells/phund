@@ -1,22 +1,23 @@
 import React from 'react'
 
 import {Button, Row, Menu, Col, Divider} from 'antd'
-import BlueLendButton from '../SVG/BlueLendButton'
-import RedBorrowButton from '../SVG/RedBorrowButton'
-import CloudImage from '../SVG/Cloud'
-import PhundLogo from '../SVG/triangleIcon'
+import BlueLendButton from '../DivSixComponents/BlueLendButton'
+import RedBorrowButton from '../DivSixComponents/RedBorrowButton'
+import CloudImage from '../DivSixComponents/Cloud'
+import PhundLogo from '../DivSixComponents/triangleIcon'
 import SignupButton from './loginSignupButton'
-import Copyright from '../SVG/Copyright'
-import MainImage from '../SVG/DivSixImage'
+import Copyright from '../DivSixComponents/Copyright'
+import MainImage from '../DivSixComponents/DivSixImage'
 import {
     
     InstagramOutlined,
     LinkedinOutlined,
     TwitterOutlined,
   } from '@ant-design/icons';
-import MenuLogo from '../SVG/PhundLogoMenu'
-import RightSideTriangle from '../SVG/RSTriangleSVG'
-import LeftCloud from '../SVG/LeftCloud'
+import MenuLogo from '../DivSixComponents/PhundLogoMenu'
+import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
+import LeftCloud from '../DivSixComponents/LeftCloud'
+import '../Landing/CSS/customBackground.css'
 
 
 
@@ -40,7 +41,9 @@ function PhundFooter() {
 
         <>
         
-        <Row>
+        <Row
+        className="button-color-background"
+        >
             
             <Col
             span={2}
