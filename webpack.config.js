@@ -47,7 +47,8 @@ module.exports = {
                                'layout-footer-background': '#E7F4FD',
                                'layout-footer-padding': '0px 0px',
                                'menu-bg': '##E7F4FD',
-                               'font-family': 'Raleway, sans-serif',                               
+                               'font-family': 'Raleway, sans-serif',
+                               'layout-header-background': '#E7F4FD'                               
                              },
                     javascriptEnabled: true,
                 }

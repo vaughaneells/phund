@@ -8,6 +8,8 @@ import { userActions } from "../actions";
 import BottomFooter from './Borrow/utils/Landing/DivSix'
 import DivFive from './Borrow/utils/Landing/DivFive'
 import DivFour from './Borrow/utils/Landing/DivFour'
+import DivThree from './Borrow/utils/Landing/DivThree'
+import DivOne from './Borrow/utils/Landing/DivOne'
 
 
 
@@ -26,15 +28,18 @@ class Landing extends React.Component {
       <div>
         <Router history={history}>
           <Layout>
-            <Header>
-              <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+            <Header
+            
+            >
+              {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
                   <Link to="/login">login</Link>
                 </Menu.Item>
                 <Menu.Item key="2">
                   <Link to="/register">register</Link>
                 </Menu.Item>
-              </Menu>
+              </Menu> */}
+              <DivOne></DivOne>
             </Header>
             <Content>
               
@@ -42,11 +47,13 @@ class Landing extends React.Component {
             <Content>
               
             </Content>
-            <Content>
-              
+            <Content
+            style={{backgroundColor: '#FFFFFF'}}
+            >
+              <DivThree></DivThree>
             </Content>
             <Content
-            style={{backgroundColor: "#2A2958"}}
+            style={{backgroundColor: '#2A2958'}}
             >
               <DivFour>
               </DivFour>
