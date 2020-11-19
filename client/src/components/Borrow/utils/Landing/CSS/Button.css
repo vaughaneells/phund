@@ -1,0 +1,13 @@
+.blue {
+  background-image: url(../Assets/SVG/ButtonBackgroung.svg);
+  background-size: 120px 120px;
+  background-position: right 1px top 1px;
+  background-repeat: no-repeat;
+}
+
+.red {
+  background-image: url(../Assets/SVG/ButtonBackgroung.svg);
+  background-size: 120px 120px;
+  background-position: right 1px top 1px;
+  background-repeat: no-repeat;
+}
