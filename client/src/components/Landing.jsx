@@ -9,6 +9,7 @@ import BottomFooter from './Borrow/utils/Landing/DivSix'
 import DivFive from './Borrow/utils/Landing/DivFive'
 import DivFour from './Borrow/utils/Landing/DivFour'
 import DivThree from './Borrow/utils/Landing/DivThree'
+import HeaderDiv from './Borrow/utils/Landing/HeaderDiv'
 import DivOne from './Borrow/utils/Landing/DivOne'
 
 
@@ -39,10 +40,10 @@ class Landing extends React.Component {
                   <Link to="/register">register</Link>
                 </Menu.Item>
               </Menu> */}
-              <DivOne></DivOne>
+              <HeaderDiv></HeaderDiv>
             </Header>
             <Content>
-              
+              <DivOne></DivOne>
             </Content>
             <Content>
               
