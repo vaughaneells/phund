@@ -1,9 +1,9 @@
 import { Row } from 'antd';
 import React from 'react'
 import SignupButton from './loginSignupButton'
-import PhundLogo from '../SVG/PhundLogo'
-import ArtIcon from '../SVG/triangleIcon'
-import CloudImage from '../SVG/Cloud'
+import PhundLogo from '../DivSixComponents/PhundLogo'
+import ArtIcon from '../DivSixComponents/triangleIcon'
+import CloudImage from '../DivSixComponents/Cloud'
 
 
 
