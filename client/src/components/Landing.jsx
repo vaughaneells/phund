@@ -9,22 +9,29 @@ import BottomFooter from './Borrow/utils/Landing/DivSix'
 import DivFive from './Borrow/utils/Landing/DivFive'
 import DivFour from './Borrow/utils/Landing/DivFour'
 import DivThree from './Borrow/utils/Landing/DivThree'
-import HeaderDiv from './Borrow/utils/Landing/HeaderDiv'
 import DivOne from './Borrow/utils/Landing/DivOne'
+
+
+
 const { Header, Footer, Content } = Layout;
+
 class Landing extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props.logout();
-    }
-    render() {
-        return (
-            <div>
-                <Router history={history}>
-                    <Layout>
-                        <Header
-                        >
-                            {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+  constructor(props) {
+    super(props);
+
+    this.props.logout();
+  }
+  render() {
+
+    
+    return (
+      <div>
+        <Router history={history}>
+          <Layout>
+            <Header
+            
+            >
+              {/* <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
                   <Link to="/login">login</Link>
                 </Menu.Item>
@@ -32,45 +39,50 @@ class Landing extends React.Component {
                   <Link to="/register">register</Link>
                 </Menu.Item>
               </Menu> */}
-                            <HeaderDiv></HeaderDiv>
-                        </Header>
-                        <Content>
-                            <DivOne></DivOne>
-                        </Content>
-                        <Content>
-                        </Content>
-                        <Content
-                            style={{backgroundColor: '#FFFFFF'}}
-                        >
-                            <DivThree></DivThree>
-                        </Content>
-                        <Content
-                            style={{backgroundColor: '#2A2958'}}
-                        >
-                            <DivFour>
-                            </DivFour>
-                        </Content>
-                        <Content
-                            style={{backgroundColor: '#FFFFFF'}}
-                        >
-                            <DivFive></DivFive>
-                        </Content>
-                        <Footer>
-                            <BottomFooter>
-                            </BottomFooter>
-                        </Footer>
-                    </Layout>
-                </Router>
-            </div>
-        );
-    }
+              <DivOne></DivOne>
+            </Header>
+            <Content>
+              
+            </Content>
+            <Content>
+              
+            </Content>
+            <Content
+            style={{backgroundColor: '#FFFFFF'}}
+            >
+              <DivThree></DivThree>
+            </Content>
+            <Content
+            style={{backgroundColor: '#2A2958'}}
+            >
+              <DivFour>
+              </DivFour>
+            </Content>
+            <Content
+            style={{backgroundColor: '#FFFFFF'}}
+            >
+              <DivFive></DivFive>
+            </Content>
+            <Footer>
+              <BottomFooter>
+
+              </BottomFooter>
+            </Footer>
+          </Layout>
+        </Router>
+      </div>
+    );
+  }
 }
+
 function mapState(state) {
-    const { loggedIn } = state.authentication;
-    return { loggedIn };
+  const { loggedIn } = state.authentication;
+  return { loggedIn };
 }
+
 const actionCreators = {
-    logout: userActions.logout,
+  logout: userActions.logout,
 };
+
 const connectedLanding = connect(mapState, actionCreators)(Landing);
 export { connectedLanding as Landing };
