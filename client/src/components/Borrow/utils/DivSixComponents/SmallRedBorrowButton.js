@@ -5,14 +5,14 @@ import {RightCircleOutlined} from '@ant-design/icons'
 function SmallBorrowButton() {
     const Buttonstyle={
         width: "180px",
-        height: "60px",
+        height: "54px",
         marginTop:"10",
         paddingTop: "10px",
-        paddingBottom: "20",
+        paddingBottom: "10px",
         backgroundColor:'#FF5776',
         borderRadius: "25px",
         borderWidth: "1",
-        justifyContent: 'left',
+        justifyContent: 'left'
         
     
     }
@@ -28,7 +28,7 @@ function SmallBorrowButton() {
                    >
                    <div>
                         <p
-                        style={{alignItems: 'flex-start', fontSize: '25px', color: '#FFFFFF'}}
+                        style={{alignItems: 'flex-start', fontSize: '18px', color: '#FFFFFF', fontFamily: 'Raleway', fontWeight: 'bolder'}}
                         >
                             Borrow
                         </p>

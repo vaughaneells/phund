@@ -15,31 +15,49 @@ function HeaderDiv() {
             mode="horizontal"
             > 
             <Menu.Item
-            style={{marginRight: 90}}
+            style={{marginRight: 90, fontFamily: 'Raleway', fontWeight: "bold"}}
             >
                 <MenuLogo></MenuLogo>
                 PHUND.
             </Menu.Item>
-            <Menu.Item>Products</Menu.Item>
-       
-            <Menu.Item>How it Works</Menu.Item>
-            <Menu.Item>Features</Menu.Item>
-            <Menu.Item>Learn</Menu.Item>
-            <Menu.Item>Partners</Menu.Item>
             <Menu.Item
-            style={{marginLeft:90}}
-            >
-                Login
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >Products</Menu.Item>
+       
+            <Menu.Item
+            style={{fontFamily: 'Raleway'}}
+            >How it Works
 
-                
-                               
             </Menu.Item>
-              
+            <Menu.Item
+            style={{fontFamily: 'Raleway'}}
+            >Features</Menu.Item>
+
+            <Menu.Item
+            style={{fontFamily: 'Raleway'}}
+            >Learn</Menu.Item>
+            <Menu.Item
+            style={{fontFamily: 'Raleway'}}
+            >Partners</Menu.Item>
+            <Menu.Item>
+
+            </Menu.Item>
+            <Menu.Item>
+                
+            </Menu.Item>
+            <Menu.Item
+            style={{fontFamily: 'Raleway', fontWeight: "bold"}}
+            >
+                Login                          
+            </Menu.Item>
+            <Menu.Item>
+               <SignupButton></SignupButton>   
+            </Menu.Item>
         </Menu>
         <div
         style={{marginLeft: 10, marginTop: 3}}
         >
-          <SignupButton></SignupButton>   
+           
         </div>
             </Row>
         </>

@@ -12,6 +12,7 @@ function ButtonGroup() {
     backgroundColor:'#3850B5',
     borderRadius: "25px",
     borderWidth: "1",
+    color: "#ffffff"
     }
     return (
     

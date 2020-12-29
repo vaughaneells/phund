@@ -11,6 +11,7 @@ import DivFour from './Borrow/utils/Landing/DivFour'
 import DivThree from './Borrow/utils/Landing/DivThree'
 import HeaderDiv from './Borrow/utils/Landing/HeaderDiv'
 import DivOne from './Borrow/utils/Landing/DivOne'
+import DivTwo from './Borrow/utils/Landing/DivTwo'
 
 
 
@@ -45,8 +46,12 @@ class Landing extends React.Component {
             <Content>
               <DivOne></DivOne>
             </Content>
-            <Content>
-              
+            <Content
+            style={{backgroundColor: '#2A2958'}}
+            >
+              <DivTwo>
+
+              </DivTwo>
             </Content>
             <Content
             style={{backgroundColor: '#FFFFFF'}}
