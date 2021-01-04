@@ -26,13 +26,13 @@ function SmallBorrowButton() {
                    <Col
                    span={3}
                    >
-                   <div>
+                   <>
                         <p
                         style={{alignItems: 'flex-start', fontSize: '18px', color: '#FFFFFF', fontFamily: 'Raleway', fontWeight: 'bolder'}}
                         >
                             Borrow
                         </p>
-                    </div>
+                    </>
                    </Col>
                    <Col
                    span={17}

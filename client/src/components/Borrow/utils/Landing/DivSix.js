@@ -32,6 +32,7 @@ function PhundFooter() {
     backgroundColor:'#3850B5',
     borderRadius: "25px",
     borderWidth: "1",
+    color: '#ffffff'
     }
 
    
@@ -46,27 +47,27 @@ function PhundFooter() {
         >
             
             <Col
-            span={2}
+            lg={2}
             >
             
             </Col>
             <Col
-            span={4}
+            lg={4}
             >
                 <BlueLendButton>
                 </BlueLendButton>
             </Col>
             <Col
-            span={8}
+            lg={8}
             >
             </Col>
             <Col
-            span={6}
+            lg={6}
             >
                 <RedBorrowButton></RedBorrowButton>
             </Col>
             <Col
-            span={4}
+            lg={4}
             >
             </Col>
         </Row>
@@ -74,59 +75,63 @@ function PhundFooter() {
             justify="end"
             >
             <Col
-            span={4}>
+            lg={4}>
             </Col>
     
         </Row>
         <Row
-            justify="center">
+            justify="center"
+            style={{marginTop: '50px'}}
+        >
+            
                 <p
-                style={{fontWeight: 'bold', fontSize: 45}}
+                style={{fontWeight: 'bold', fontSize: '40px', color: '#2A2958'}}
                 >
                     Do you have questions?
                 </p>
         </Row>
         <Row>
             <Col
-            span={2}
+            lg={2}
             >
                 <LeftCloud></LeftCloud>
             </Col>
             <Col
-            span={20}
+            lg={20}
             style={{textAlign: 'center'}}
             >
                 <p
-                style={{fontSize: 22}}
+                style={{fontSize: 22, color: '#2A2958', fontFamily: 'Montserrat'}}
                 
                 >
                     Peer to Peer lending for loans under $500
                 </p>
+                <Row
+                    style={{marginLeft: 20}}
+                    justify="center"
+                >
+                    <Button style={Buttonstyles} size="large">Contact Us</Button> 
+                </Row>
             </Col>
             <Col
-            span={2}
+            lg={2}
             >
                 <RightSideTriangle></RightSideTriangle>
             </Col>
             
         </Row>
-        <Row
-            style={{marginBottom: 20, marginLeft: 20}}
-            justify="center"
-            >
-            <Button style={Buttonstyles} size="large">Contact Us</Button> 
-        </Row>
+        
         <Row
         justify="space-between" align="bottom"
         >
             <Col
-            span={4}
+            lg={4}
             >
             <PhundLogo>
             </PhundLogo>  
             </Col>
             <Col
-            span={18}
+            lg={18}
             >
                 <div>
                     <MainImage>
@@ -135,7 +140,7 @@ function PhundFooter() {
             
             </Col>
             <Col
-            span={2}
+            lg={2}
             >
             <CloudImage></CloudImage>
             </Col>
@@ -147,6 +152,7 @@ function PhundFooter() {
     
         <Menu
             mode="horizontal"
+            style={{color: '#2A2958'}}
             > 
             <Menu.Item
             style={{marginRight: 90}}
@@ -183,21 +189,29 @@ function PhundFooter() {
         </Row>
         <Row>
             <Col
-            span={2}
+            lg={2}
             >
             <Copyright>
             </Copyright>
             </Col>
             <Col
-            span={20}
+            lg={19}
             >
             </Col>
             <Col
-            span={2}
+            lg={1}
             >
-            <InstagramOutlined style={{ fontSize: '22px', cursor: 'pointer' }} />
-            <LinkedinOutlined style={{ fontSize: '22px', cursor: 'pointer' }} />
-            <TwitterOutlined style={{ fontSize: '22px', cursor: 'pointer' }} />
+            <LinkedinOutlined style={{ fontSize: '32px', cursor: 'pointer',color: '#2A2958', opacity: '0.4'  }} />
+            </Col>
+            <Col
+            lg={1}
+            >
+            <InstagramOutlined style={{ fontSize: '32px', cursor: 'pointer', color: '#2A2958', opacity: '0.4' }} />
+            </Col>
+            <Col
+            lg={1}
+            >
+            <TwitterOutlined style={{ fontSize: '32px', cursor: 'pointer', color: '#2A2958', opacity: '0.4'  }} />
             </Col>
             
         </Row>

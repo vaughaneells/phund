@@ -12,72 +12,80 @@ function DivFive() {
     const {Meta} = Card
     return(
         <>
-        
-            <Row
-            style={{justifyContent: 'center', marginTop: '80px'}}
+         <Row
+            align="middle"
+        >
+            <Col
+            lg={8}
             >
-                <div
-                style={{alignContent: 'center', color: '#2A2958'}}
-                >
-                   <h1
-                   style={{fontWeight:'bold'}}
-                   >
+            </Col>
+            <Col
+            lg={8}
+            style={{justifyItems: 'center'}}
+            >
+               <div
+                    style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: '70px'}}
+                >     
+                    <h1>
                     Latest Articles
                     </h1>
-                    <p>
-                        Learn more about Peer to Peer Lending
-                    </p> 
                 </div>
-                
+                <div
+                        style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"}}
+                >
+                    <h2
+                    style={{justifyItems: 'center', fontSize: '18px'}}
+                    >
+                    Learn more about all things finance
+                    </h2> 
+                </div>
+            </Col>
+            <Col
+                lg={8}
+            >
+            </Col>
             </Row>
             <Row
             style={{marginBottom: '50px'}}
             >
                 <Col
-                span={3}
+                lg={3}
                 >
                 <LeftSideTriangle></LeftSideTriangle>
                 </Col>
                 <Col
-                span={6}
+                lg={6}
                 >
                 <Card
                     style={{ width: 300 }}
                     cover={
-                    <img
-                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                    />
+                    <img src={require('../Landing/Assets/SVG/MainPhundImage.svg')} />
                     }
-                    actions={[
-                    <SettingOutlined key="setting" />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                    ]}
+                    
                     >
                     <Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                    title="Card title"
+                    title="Hello"
                     description="This is the description"
                     />
                     </Card>
                 </Col>
                 <Col
-                span={6}
+                lg={6}
                 >
                     <Card
                     style={{ width: 300 }}
                     cover={
-                    <img
-                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                    />
+                    <img src={require('../Landing/Assets/SVG/MainPhundImage.svg')} />
                     }
-                    actions={[
-                    <SettingOutlined key="setting" />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                    ]}
+                    
                     >
                     <Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -87,21 +95,14 @@ function DivFive() {
                     </Card>
                 </Col>
                 <Col
-                span={6}
+                lg={6}
                 >
                     <Card
                     style={{ width: 300 }}
                     cover={
-                    <img
-                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                    />
+                    <img src={require('../Landing/Assets/SVG/MainPhundImage.svg')} />
                     }
-                    actions={[
-                    <SettingOutlined key="setting" />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                    ]}
+                    
                     >
                     <Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -111,7 +112,7 @@ function DivFive() {
                     </Card>
                 </Col>
                 <Col
-                span={3}
+                lg={3}
                 >
                 
                 </Col>
@@ -128,39 +129,83 @@ function DivFive() {
                     </p>
                 
             </Row>
-            <Row>
+            <Row
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"}}
+            align='middle'
+            >
                 <Col
-                span={4}
+                lg={4}
                 >
                 
                 </Col>
                 <Col
-                span={6}
-                style={{fontSize: '40px'}}
+                lg={5}
+                style={{fontSize: '40px', textAlign: 'center', color: '#4E668A', opacity: '0.4'}}
                 >
-                        <GithubOutlined></GithubOutlined>
-                        <p style={{justifyContent: 'center'}}>Stripe</p>
+                    Stripe
+                        <Row
+                        align='middle'
+                        >
+                            <Col
+                            lg={24}
+                            >
+                                <div style={{textAlign: 'center'}}>
+                                    <GithubOutlined></GithubOutlined>
+                                </div>
+                            
+                                
+                            </Col>
+                        
+                        </Row>
+                        
                         
                 </Col>
                 <Col
-                span={6}
-                style={{justifyContent: 'center', fontSize: '40px'}}
+                lg={5}
+                style={{fontSize: '40px', textAlign: 'center', color: '#4E668A', opacity: '0.4'}}
                 >
-                        <AntDesignOutlined></AntDesignOutlined>
-                        <p>Ant Design</p>
+                    Ant Design
+                        <Row>
+                            <Col
+                            lg={24}
+                            style={{textAlign: 'center'}}
+                            >
+                                <div>
+                                    <AntDesignOutlined></AntDesignOutlined>
+                                </div>
+                                
+                            </Col>
+                        </Row>
+                        
+                        
                 </Col>
                 <Col
-                span={6}
-                style={{justifyContent: 'center', fontSize: '40px'}}
+                lg={5}
+                style={{fontSize: '40px', textAlign: 'center', color: '#4E668A', opacity: '0.4'}}
                 >
-                    <div>
-                      <AmazonOutlined></AmazonOutlined>
-                    <p>Amazon</p>  
-                    </div>
-                    
+
+                    Amazon  
+                    <Row>
+                            <Col
+                            lg={24}
+                            style={{textAlign: 'center'}}
+                            >
+                                <div>
+                                    <AmazonOutlined></AmazonOutlined>
+                                                                    </div>
+                                
+                            </Col>
+                        </Row>
                 </Col>
                 <Col
-                span={2}
+                lg={3}
+                >
+                </Col>
+                <Col
+                lg={2}
                 >
                     <RightSideTriangle></RightSideTriangle>
                 </Col>

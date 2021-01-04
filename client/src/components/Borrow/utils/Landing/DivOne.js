@@ -13,7 +13,7 @@ import SmallBorrowButton from '../DivSixComponents/SmallRedBorrowButton'
 function DivOne() {
 return(
     <>
-        <Row>
+        {/* <Row>
             <Col
             span={2}
             >
@@ -28,7 +28,7 @@ return(
             >
                 <RTCloud></RTCloud>
             </Col>
-        </Row>
+        </Row> */}
         <Row
         align="middle"
         >
@@ -46,33 +46,37 @@ return(
             >
                 <div>
                     <h1
-                    style={{color: '#2A2958', fontWeight: 'bolder', fontSize: '74px', fontFamily: 'Raleway'}}
+                    style={{color: '#2A2958', fontSize: '74px', fontFamily: 'Raleway'}}
                     >
                         Small Loans.
                     </h1>
                     <h1
-                    style={{color: '#2A2958', fontWeight: 'bolder', fontSize: '74px', fontFamily: 'Raleway'}}
+                    style={{color: '#2A2958', fontSize: '74px', fontFamily: 'Raleway'}}
                     >
                         Big Impact.
                     </h1>
                 </div>
                     <p
-                    style={{color: '#2A2958', fontSize: '22px'}}
+                    style={{color: '#2A2958', fontSize: '22px', fontWeight: 'unset'}}
                     >
                         Peer to Peer lending for Loans under $500
                     </p>
                         <Row>
                             <Col
-                            lg={12}
-                            sm={24}
+                            xl={12}
+                            lg={24}
+                            md={24}
+                            sm={12}
                             >
                                 <BlueButton>
                                     Lend
                                 </BlueButton>
                             </Col>
                             <Col
-                            lg={12}
-                            sm={24}
+                            xl={12}
+                            lg={24}
+                            md={24}
+                            sm={12}
                             >
                                 <SmallBorrowButton></SmallBorrowButton>
                             </Col>

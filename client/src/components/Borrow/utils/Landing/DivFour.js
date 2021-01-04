@@ -25,6 +25,8 @@ function DivFour() {
         backgroundColor:'#F7CBD0',
         borderRadius: "25px",
         borderWidth: "1",
+        color: '#2A2958',
+        fontFamily: 'Raleway'
         }
 
 return (
@@ -45,14 +47,18 @@ return (
                         >
                             <div>
                                 <h1
-                                style={{color: '#FFFFFF', fontWeight: 'bolder'}}
+                                style={{color: '#FFFFFF', fontWeight: 'bolder', fontFamily: 'Raleway'}}
                                 >
                                     FAQ
                                 </h1>
-                                <p>
+                                <p
+                                    style={{fontFamily: 'Montserrat', fontSize: '18px', color: '#D8D7FC'}}
+                                >
                                     Find answers to your questions here
                                 </p>
-                                <p>
+                                <p
+                                    style={{fontFamily: 'Montserrat', fontSize: '18px', color: '#D8D7FC'}}
+                                >
                                     Still can't find the answers?
                                 </p>
                                 <div
@@ -60,7 +66,8 @@ return (
                                 >
                                     <Button
                                     
-                                    style={Buttonstyles}>
+                                    style={Buttonstyles}
+                                    >
                                         Contact Us
                                     </Button>
                                 </div>
@@ -81,17 +88,19 @@ return (
                 span={12}
                 >
                     <List
+                        style={{fontFamily: 'Montserrat', color: '#ffffff', fontSize: '18px'}}
                         itemLayout="horizontal"
                         dataSource={data}
                         renderItem={item => (
                         <List.Item>
                         <List.Item.Meta
+                        
                         title={<a href="https://ant.design">{item.title}</a>}
                         
                         />
                         </List.Item>
                              )}
-                    />,   
+                    />   
                 </Col>
                 <Col
                 span={2}

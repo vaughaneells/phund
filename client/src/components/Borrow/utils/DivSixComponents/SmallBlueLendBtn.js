@@ -13,8 +13,7 @@ function SmallLendButton() {
         borderRadius: "25px",
         borderWidth: "1",
         justifyContent: 'left',
-        
-    
+        color: '#ffffff'
     }
 
     return(
@@ -28,7 +27,7 @@ function SmallLendButton() {
                    >
                    <div>
                         <p
-                        style={{alignItems: 'flex-start', fontSize: '18px', color: '#FFFFFF', fontWeight: 'bolder', fontFamily: 'Raleway'}}
+                        style={{alignItems: 'flex-start', fontSize: '18px', color: '#ffffff', fontWeight: 'bolder', fontFamily: 'Raleway'}}
                         >
                             Lend
                         </p>
