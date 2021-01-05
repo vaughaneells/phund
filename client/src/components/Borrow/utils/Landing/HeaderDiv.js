@@ -13,9 +13,10 @@ function HeaderDiv() {
             >
             <Menu
             mode="horizontal"
+            style={{fontSize: '12px'}}
             > 
             <Menu.Item
-            style={{marginRight: 90, fontFamily: 'Raleway', fontWeight: "bold"}}
+            style={{marginRight: 90, fontFamily: 'Raleway', color: '#223D65'}}
             >
                 <MenuLogo></MenuLogo>
                 PHUND.
@@ -25,19 +26,19 @@ function HeaderDiv() {
             >Products</Menu.Item>
        
             <Menu.Item
-            style={{fontFamily: 'Raleway'}}
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
             >How it Works
 
             </Menu.Item>
             <Menu.Item
-            style={{fontFamily: 'Raleway'}}
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
             >Features</Menu.Item>
 
             <Menu.Item
-            style={{fontFamily: 'Raleway'}}
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
             >Learn</Menu.Item>
             <Menu.Item
-            style={{fontFamily: 'Raleway'}}
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
             >Partners</Menu.Item>
             <Menu.Item>
 
@@ -46,7 +47,7 @@ function HeaderDiv() {
                 
             </Menu.Item>
             <Menu.Item
-            style={{fontFamily: 'Raleway', fontWeight: "bold"}}
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
             >
                 Login                          
             </Menu.Item>
@@ -54,11 +55,6 @@ function HeaderDiv() {
                <SignupButton></SignupButton>   
             </Menu.Item>
         </Menu>
-        <div
-        style={{marginLeft: 10, marginTop: 3}}
-        >
-           
-        </div>
             </Row>
         </>
     )
