@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .divThreeImage {
+    width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .leftTriangle {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .seniorImage {
+    width: 450px;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+}

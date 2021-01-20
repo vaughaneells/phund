@@ -18,6 +18,9 @@ import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
 import LeftCloud from '../DivSixComponents/LeftCloud'
 import '../Landing/CSS/customBackground.css'
+import '../Landing/CSS/Button.css'
+import '../Landing/CSS/Header.css'
+
 
 
 
@@ -48,12 +51,33 @@ function PhundFooter() {
             
             <Col
             lg={2}
+            xs={5}
             >
             
             </Col>
             <Col
             lg={4}
-            >
+            xs={8}
+            >    
+                <Button
+                    style={{
+                        width: "95px",
+                        height: "40px",
+                        marginTop:"10",
+                        paddingTop: "15",
+                        paddingBottom: "15",
+                        marginLeft: "30",
+                        marginRight: "30",
+                        backgroundColor:'#71B8F2',
+                        borderRadius: "25px",
+                        borderWidth: "1",
+                        color: '#ffffff',
+                        justifyContent: 'center'
+                          }} 
+                    className='smallScreenButton'
+                >
+                    Lend.
+                </Button>
                 <BlueLendButton>
                 </BlueLendButton>
             </Col>
@@ -63,7 +87,26 @@ function PhundFooter() {
             </Col>
             <Col
             lg={6}
+            xs={11}
             >
+                <Button
+                    className='smallScreenButton'
+                    style={{
+                        width: "95px",
+                        height: "40px",
+                        marginTop:"10",
+                        paddingTop: "15",
+                        paddingBottom: "15",
+                        marginLeft: "30",
+                        marginRight: "30",
+                        backgroundColor:'#FF5776',
+                        borderRadius: "25px",
+                        borderWidth: "1",
+                        color: '#ffffff',
+                    }}
+                >
+                    Borrow.
+                </Button>
                 <RedBorrowButton></RedBorrowButton>
             </Col>
             <Col
@@ -145,44 +188,70 @@ function PhundFooter() {
             <CloudImage></CloudImage>
             </Col>
         </Row>
-        
-        <Row
-            justify='center'
+        <Row>
+            <Col
+            lg={4}
             >
+            </Col>
+            <Col
+            lg={18}
+            className='centerMenu'
+            >
+            
     
-        <Menu
+            <Menu
             mode="horizontal"
-            style={{color: '#2A2958'}}
+            style={{fontSize: '12px'}}
             > 
             <Menu.Item
-            style={{marginRight: 90}}
+            style={{marginRight: 90, fontFamily: 'Raleway', color: '#223D65'}}
             >
                 <MenuLogo></MenuLogo>
                 PHUND.
             </Menu.Item>
-            <Menu.Item>Products</Menu.Item>
-       
-            <Menu.Item>How it Works</Menu.Item>
-            <Menu.Item>Features</Menu.Item>
-            <Menu.Item>Learn</Menu.Item>
-            <Menu.Item>Partners</Menu.Item>
             <Menu.Item
-            style={{marginLeft:90}}
-            >
-                Login
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >Products</Menu.Item>
+       
+            <Menu.Item
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >How it Works
 
-                
-                               
             </Menu.Item>
-              
-        </Menu>
-        <div
-        style={{marginLeft: 10, marginTop: 3}}
-        >
-          <SignupButton></SignupButton>   
-        </div>
-         
+            <Menu.Item
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >Features</Menu.Item>
+
+            <Menu.Item
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >Learn</Menu.Item>
+            <Menu.Item
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >Partners</Menu.Item>
+            <Menu.Item>
+
+            </Menu.Item>
+            <Menu.Item>
+                
+            </Menu.Item>
+            <Menu.Item
+            style={{fontFamily: 'Raleway', color: '#223D65'}}
+            >
+                Login                          
+            </Menu.Item>
+            <Menu.Item>
+               <SignupButton></SignupButton>   
+            </Menu.Item>
+            </Menu>
+            </Col>
+            <Col
+            lg={2}
+            >
+            </Col>
+
         </Row>
+            
+        
         <Row>
             <Divider>
             </Divider>

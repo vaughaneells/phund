@@ -1,15 +1,33 @@
 import React from 'react'
-import {Row, Menu} from 'antd'
+import {Row, Menu, Col} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
-
+import LTTriangleIcon from '../DivSixComponents/triangleIcon'
+import RTCloud from '../DivSixComponents/Cloud'
+import '../Landing/CSS/Header.css'
 
 
 function HeaderDiv() {
     return (
         <>
             <Row
-            justify='center'
+            align='top'
+
+            >
+                <Col
+                lg={2}
+                style={{justifyItems: 'left'}}
+                className='mobileResponsive'
+                >
+                    <LTTriangleIcon></LTTriangleIcon>
+                </Col>
+                <Col
+                lg={2}
+                >
+                </Col>
+            <Col
+            lg={18}
+            className='centerMenu'
             >
             <Menu
             mode="horizontal"
@@ -55,6 +73,14 @@ function HeaderDiv() {
                <SignupButton></SignupButton>   
             </Menu.Item>
         </Menu>
+        </Col>
+                <Col
+                lg={2}
+                className='mobileResponsive'
+                >
+                    <RTCloud></RTCloud>
+                </Col>
+
             </Row>
         </>
     )

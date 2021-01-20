@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px) {
+  .mobileResponsive {
+    display: none;
+  }
+  .centerMenu {
+    align-items: center;
+  }
+}
