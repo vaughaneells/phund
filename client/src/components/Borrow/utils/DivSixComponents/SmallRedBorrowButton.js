@@ -30,7 +30,7 @@ function SmallBorrowButton() {
                         <p
                         style={{alignItems: 'flex-start', fontSize: '18px', color: '#FFFFFF', fontFamily: 'Raleway', fontWeight: 'bolder'}}
                         >
-                            Borrow
+                            Borrow.
                         </p>
                     </>
                    </Col>

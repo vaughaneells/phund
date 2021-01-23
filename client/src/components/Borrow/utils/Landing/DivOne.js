@@ -68,19 +68,19 @@ return(
                             <Col
                             xl={12}
                             lg={24}
-                            md={24}
+                            md={12}
                             sm={24}
                             xs={24}
                             className='buttonGroup'
                             >
                                 <BlueButton>
-                                    Lend
+                                    
                                 </BlueButton>
                             </Col>
                             <Col
                             xl={12}
                             lg={24}
-                            md={24}
+                            md={12}
                             sm={24}
                             xs={24}
                             className='buttonGroup'

@@ -17,7 +17,7 @@ import {
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
 import LeftCloud from '../DivSixComponents/LeftCloud'
-import '../Landing/CSS/customBackground.css'
+import '../Landing/CSS/DivSix.css'
 import '../Landing/CSS/Button.css'
 import '../Landing/CSS/Header.css'
 
@@ -126,12 +126,26 @@ function PhundFooter() {
             justify="center"
             style={{marginTop: '50px'}}
         >
-            
-                <p
-                style={{fontWeight: 'bold', fontSize: '40px', color: '#2A2958'}}
+            <Col
+            lg={8}
+            xs={8}
+            >
+            </Col>
+            <Col
+            lg={8}
+            xs={24}
+            >
+                <div
+                    style={{fontWeight: 'bold', fontSize: '40px', color: '#2A2958', textAlign: 'center'}}
                 >
                     Do you have questions?
-                </p>
+                </div>
+            </Col>
+            <Col
+            lg={8}
+            xs={8}
+            >
+            </Col>                
         </Row>
         <Row>
             <Col
@@ -158,8 +172,12 @@ function PhundFooter() {
             </Col>
             <Col
             lg={2}
+            className="mobileResponsive"
             >
-                <RightSideTriangle></RightSideTriangle>
+                <RightSideTriangle
+                >
+
+                </RightSideTriangle>
             </Col>
             
         </Row>
@@ -169,6 +187,7 @@ function PhundFooter() {
         >
             <Col
             lg={4}
+            className="mobileResponsive"
             >
             <PhundLogo>
             </PhundLogo>  
@@ -177,20 +196,20 @@ function PhundFooter() {
             lg={18}
             >
                 <div>
-                    <MainImage>
-                    </MainImage> 
+                    <img className="DivSixSVG" src={require('../Landing/Assets/SVG/DivSix.svg')} />
                 </div>
             
             </Col>
             <Col
             lg={2}
+            className="mobileResponsive"
             >
             <CloudImage></CloudImage>
             </Col>
         </Row>
         <Row>
             <Col
-            lg={4}
+            lg={5}
             >
             </Col>
             <Col
@@ -245,7 +264,7 @@ function PhundFooter() {
             </Menu>
             </Col>
             <Col
-            lg={2}
+            lg={1}
             >
             </Col>
 
@@ -259,26 +278,31 @@ function PhundFooter() {
         <Row>
             <Col
             lg={2}
+            xs={8}
             >
             <Copyright>
             </Copyright>
             </Col>
             <Col
             lg={19}
+            xs={9}
             >
             </Col>
             <Col
             lg={1}
+            xs={2}
             >
             <LinkedinOutlined style={{ fontSize: '32px', cursor: 'pointer',color: '#2A2958', opacity: '0.4'  }} />
             </Col>
             <Col
             lg={1}
+            xs={2}
             >
             <InstagramOutlined style={{ fontSize: '32px', cursor: 'pointer', color: '#2A2958', opacity: '0.4' }} />
             </Col>
             <Col
             lg={1}
+            xs={1}
             >
             <TwitterOutlined style={{ fontSize: '32px', cursor: 'pointer', color: '#2A2958', opacity: '0.4'  }} />
             </Col>

@@ -1,8 +1,3 @@
-import React from 'react'
-
-function Div() {
-    return (
-
 <svg width="1017" height="452" viewBox="0 0 1017 452" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <circle cx="508.5" cy="253.5" r="240.5" fill="#F7FCFF"/>
@@ -410,7 +405,3 @@ function Div() {
 </clipPath>
 </defs>
 </svg>
-
-    )
-}
-export default Div

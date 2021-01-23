@@ -29,7 +29,7 @@ function SmallLendButton() {
                         <p
                         style={{alignItems: 'flex-start', fontSize: '18px', color: '#ffffff', fontWeight: 'bolder', fontFamily: 'Raleway'}}
                         >
-                            Lend
+                            Lend.
                         </p>
                     </div>
                    </Col>

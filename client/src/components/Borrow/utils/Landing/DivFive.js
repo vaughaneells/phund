@@ -60,12 +60,14 @@ function DivFive() {
             >
                 <Col
                 lg={3}
+                md={0}
                 className='hideDiv'
                 >
                 <LeftSideTriangle></LeftSideTriangle>
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                 <Card
                     style={{ width: 300 }}
@@ -83,6 +85,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                     <Card
                     style={{ width: 300 }}
@@ -100,6 +103,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                     <Card
                     style={{ width: 300 }}
@@ -117,6 +121,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={3}
+                md={0}
                 >
                 
                 </Col>
