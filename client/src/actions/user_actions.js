@@ -16,7 +16,6 @@ export const userActions = {
 function login(email, password) {
   return dispatch => {
     dispatch(request());
-
     userService.login(email, password).then(
       res => {
         dispatch(success());

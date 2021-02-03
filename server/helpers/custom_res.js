@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 
 module.exports = (res, user, resObj = {}) => {
+  console.log('In cookie response')
   try {
     const payload = {
       firstName: user.firstName,
