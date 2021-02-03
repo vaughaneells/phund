@@ -25,6 +25,8 @@ function login(email, password) {
     .then(handleResponse)
     .then(response => {
       try {
+        console.log('Response')
+        console.log(response)
         return response;
       } catch (err) {
         alert(err.msg);

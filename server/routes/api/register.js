@@ -20,6 +20,7 @@ router.post(
     check('email', 'Please include a valid email address').isEmail(),
     check(
       'password',
+      //TODO: Send description of error back and let user know
       'Please enter a password with 6 or more characters'
     ).isLength({
       min: 6
