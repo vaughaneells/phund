@@ -31,9 +31,7 @@ class Landing extends React.Component {
         <Router history={history}>
           <Layout>
 =======
-            <Header
             
-            >
               { <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
                   <Link to="/login">login</Link>
