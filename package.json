@@ -8,6 +8,7 @@
     "server": "nodemon server",
     "build": "webpack -dw"
   },
+  "proxy": "http://localhost:3000",
   "author": "Vaughan Eells",
   "license": "ISC",
   "dependencies": {
@@ -21,7 +22,6 @@
     "config": "^3.3.1",
     "cookie": "^0.4.1",
     "cookie-parser": "^1.4.5",
-    "cookies": "^0.8.0",
     "date-fns": "^2.8.1",
     "deasync": "^0.1.20",
     "express": "^4.17.1",
