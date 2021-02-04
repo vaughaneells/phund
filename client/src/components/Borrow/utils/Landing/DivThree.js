@@ -3,7 +3,7 @@ import {Row, Col, List, Avatar, Button} from 'antd'
 import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
 import LeftSideTriangle from '../DivSixComponents/triangleIcon'
 import {TeamOutlined, MinusCircleTwoTone} from '@ant-design/icons'
-
+import '../Landing/CSS/DivThree.css'
 
 function DivThree() {
 
@@ -54,7 +54,7 @@ return(
             sm={24}
             >
                 
-                <img src={require('../Landing/Assets/SVG/kiteFamily.svg')} />
+                <img className='divThreeImage' src={require('../Landing/Assets/SVG/kiteFamily.svg')} />
             </Col>
             <Col
             lg={1}
@@ -68,6 +68,7 @@ return(
             <Col
             lg={8}
             md={24}
+            xs={24}
             style={{justifyContent: 'right'}}
             >
                 <div>
@@ -126,6 +127,7 @@ return(
             </Col>
             <Col
             lg={2}
+            className='rightTriangle'
             >
                 <RightSideTriangle></RightSideTriangle>
             </Col>
@@ -136,7 +138,7 @@ return(
         >
             <Col
             lg={2}
-            
+            className='rightTriangle'
             >
                 <LeftSideTriangle></LeftSideTriangle>
             </Col>
@@ -207,7 +209,7 @@ return(
             lg={8}
             sm={12}
             >
-                <img src={require('../Landing/Assets/SVG/Seniors.svg')} />
+                <img className='seniorImage' src={require('../Landing/Assets/SVG/Seniors.svg')} />
             </Col>
             <Col
             lg={4}
@@ -216,7 +218,7 @@ return(
             <Col
             lg={2}
             >
-             <img src={require('../Landing/Assets/SVG/BlueRightCloud.svg')} />   
+             <img className='rightTriangle' src={require('../Landing/Assets/SVG/BlueRightCloud.svg')} />   
             </Col>
 
         </Row>

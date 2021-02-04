@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row, Col, Card, Avatar} from 'antd'
 import {TeamOutlined, MinusCircleTwoTone} from '@ant-design/icons'
+import '../Landing/CSS/DivTwo.css'
 
 
 
@@ -12,7 +13,7 @@ function DivTwo () {
             width: "280px", 
             height: "192px", 
             borderRadius: "16px", 
-            marginRight: "24px", 
+            // marginRight: "24px", 
             boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)'
          
                         }
@@ -40,29 +41,37 @@ function DivTwo () {
                 <h1
                     style={{fontSize: '44px', color: '#ffffff', fontFamily: 'Raleway', fontWeight: 'bolder', textAlign: 'center'}}
                 >
-                    How does it work?
+                    How does Phund work?
                 </h1>
                 <Row
                 style={{marginBottom: '50px', marginTop: '50px'}}
                 >
                     <Col
                     lg={24}
+                    xs={24}
                     >
                         <h1
-                        style={{fontSize: '44px', color: '#ffffff', fontFamily: 'Raleway', fontWeight: 'bolder', textAlign: 'center'}}
+                        style={{fontSize: '44px', color: '#ffffff', fontFamily: 'Raleway', 
+                        fontWeight: 'bolder', textAlign: 'center', 
+                        WebkitTextStrokeColor: '#FF5776', WebkitTextStrokeWidth: '1px'}}
+                        
                         >
-                            Borrowers
+                            BORROWERS
                         </h1>
                     </Col>
                     
                 </Row>  
-                <Row>
-                    
+                <Row
+                type='flex'
+                justify='end'
+                >
                     <Col
                     lg={8}
+                    xs={24}
                     >
                         <Card
                         style={cardStyle}
+                        className='centerText'
                         >
                             <Meta 
                             title="Step 1" 
@@ -74,9 +83,12 @@ function DivTwo () {
                     </Col>
                     <Col
                     lg={8}
+                    xs={24}
+                    
                     >
                         <Card
                         style={cardStyle}
+                        className='centerText'
                         >
                             <Meta 
                             title="Step 2" 
@@ -88,9 +100,11 @@ function DivTwo () {
                     </Col>
                     <Col
                     lg={8}
+                    xs={24}
                     >
                         <Card
                         style={cardStyle}
+                        className='centerText'
                         >
                             <Meta 
                             title="Step 3" 
@@ -107,11 +121,13 @@ function DivTwo () {
                 >
                     <Col
                     lg={24}
+                    xs={24}
                     >
                         <h1
-                        style={{fontSize: '44px', color: '#ffffff', fontFamily: 'Raleway', fontWeight: 'bolder', textAlign: 'center'}}
+                        style={{fontSize: '44px', color: '#ffffff', fontFamily: 'Raleway', 
+                        fontWeight: 'bolder', textAlign: 'center', WebkitTextStrokeColor: '#FF5776', WebkitTextStrokeWidth: '1px'}}
                         >
-                            Lenders
+                            LENDERS
                         </h1>
                     </Col>
                     
@@ -120,22 +136,32 @@ function DivTwo () {
                     
                     <Col
                     lg={8}
+                    xs={24}
+                    sm={24}
                     >
-                        <Card
-                        style={cardStyle}
-                        >
+                        
+                        
+                        
+                            <Card
+                                style={cardStyle}
+                                className='centerText'>
                             <Meta 
                             title="Step 1" 
                             description="Make an account and accept the Terms of Service" 
                             avatar={<Avatar icon={<MinusCircleTwoTone twoToneColor="#eb2f96"/>} />}
                             ></Meta>
                         </Card>
+                        
+                        
                     </Col>
                     <Col
                     lg={8}
+                    xs={24}
+                    sm={24}
                     >
                         <Card
-                        style={cardStyle}
+                            style={cardStyle}
+                            className='centerText'
                         >
                             <Meta 
                             title="Step 2" 
@@ -146,10 +172,12 @@ function DivTwo () {
                     </Col>
                     <Col
                     lg={8}
+                    xs={24}
+                    sm={24}
                     >
                         <Card
                         style={cardStyle}
-                        >
+                        className='centerText'>
                             <Meta 
                             title="Step 3" 
                             description="Make an account and accept the Terms of Service" 

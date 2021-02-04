@@ -6,25 +6,25 @@ import '../Landing/CSS/Button.css'
 
 
 
-function ClickLend() {
-  const Buttonstyles = {
-    width: "508px",
-    height: "135px",
-    marginTop:"10",
-    paddingTop: "15",
-    paddingBottom: "15",
-    marginLeft: "30",
-    marginRight: "30",
-    backgroundColor:'#71B8F2',
-    borderRadius: "25px",
-    borderWidth: "1",
 
-}
+function ClickLend() {
+  
     return(
         <>
           <Button
-          className="blue"
-          style={Buttonstyles}
+          className='blue'
+          style={{
+              width: "508px",
+              height: "135px",
+              marginTop:"10",
+              paddingTop: "15",
+              paddingBottom: "15",
+              marginLeft: "30",
+              marginRight: "30",
+              backgroundColor:'#71B8F2',
+              borderRadius: "25px",
+              borderWidth: "1",
+                }}
           >
             <Row>
               <p

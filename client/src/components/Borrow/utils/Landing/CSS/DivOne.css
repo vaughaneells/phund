@@ -1,0 +1,19 @@
+@media screen and (max-width: 400px) and (min-width: 300px) {
+  .DivOneSVG {
+    width: 360px;
+  }
+  .LeftCloud {
+    display: none;
+  }
+  .mainHeader {
+    text-align: center;
+  }
+  .buttonGroup {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .rightTriangle {
+    display: none;
+  }
+}

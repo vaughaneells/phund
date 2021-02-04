@@ -1,8 +1,8 @@
 import React from 'react'
 import {Row, Col, Card, Avatar} from 'antd'
-
-import { EditOutlined, EllipsisOutlined, SettingOutlined, GithubOutlined, AntDesignOutlined, AmazonOutlined } from '@ant-design/icons';
-import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
+import '../Landing/CSS/DivFive.css'
+// import { GithubOutlined, AntDesignOutlined, AmazonOutlined } from '@ant-design/icons';
+// import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
 import LeftSideTriangle from '../DivSixComponents/triangleIcon'
 
 
@@ -21,6 +21,7 @@ function DivFive() {
             </Col>
             <Col
             lg={8}
+            xs={24}
             style={{justifyItems: 'center'}}
             >
                <div
@@ -30,7 +31,9 @@ function DivFive() {
                     alignItems: "center",
                     marginTop: '70px'}}
                 >     
-                    <h1>
+                    <h1
+                        style={{display: 'flex', justifyContent: 'center'}}
+                    >
                     Latest Articles
                     </h1>
                 </div>
@@ -57,11 +60,14 @@ function DivFive() {
             >
                 <Col
                 lg={3}
+                md={0}
+                className='hideDiv'
                 >
                 <LeftSideTriangle></LeftSideTriangle>
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                 <Card
                     style={{ width: 300 }}
@@ -79,6 +85,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                     <Card
                     style={{ width: 300 }}
@@ -96,6 +103,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={6}
+                md={8}
                 >
                     <Card
                     style={{ width: 300 }}
@@ -113,6 +121,7 @@ function DivFive() {
                 </Col>
                 <Col
                 lg={3}
+                md={0}
                 >
                 
                 </Col>
@@ -127,8 +136,8 @@ function DivFive() {
                     >
                         Our Partners
                     </p>
-                
-            </Row>
+                </Row>
+            {/* /* </Row>
             <Row
             style={{
                 display: "flex",
@@ -209,7 +218,7 @@ function DivFive() {
                 >
                     <RightSideTriangle></RightSideTriangle>
                 </Col>
-            </Row>
+            </Row>  */}
             
                 
                

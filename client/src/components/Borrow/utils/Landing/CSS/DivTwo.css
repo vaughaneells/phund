@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+  .centerText {
+    display: "flex";
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,17 @@
+.button-color-background {
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff 50%, #e7f4fd 50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .mobileResponsive {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .DivSixSVG {
+    width: 405px;
+    height: 300px;
+  }
+}

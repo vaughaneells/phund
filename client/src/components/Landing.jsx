@@ -30,6 +30,7 @@ class Landing extends React.Component {
       <div>
         <Router history={history}>
           <Layout>
+=======
             <Header
             
             >
@@ -41,8 +42,9 @@ class Landing extends React.Component {
                   <Link to="/register">register</Link>
                 </Menu.Item>
               </Menu> }
+
               <HeaderDiv></HeaderDiv>
-            </Header>
+            
             <Content>
               <DivOne></DivOne>
             </Content>
@@ -69,11 +71,8 @@ class Landing extends React.Component {
             >
               <DivFive></DivFive>
             </Content>
-            <Footer>
               <BottomFooter>
-
               </BottomFooter>
-            </Footer>
           </Layout>
         </Router>
       </div>

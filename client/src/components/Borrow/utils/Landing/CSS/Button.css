@@ -1,5 +1,5 @@
 .blue {
-  background-image: url(../Assets/SVG/ButtonBackgroung.svg);
+  background-image: url(../Assets/SVG/ButtonBackground.svg);
   background-size: 120px 120px;
   background-position: right 1px top 1px;
   background-repeat: no-repeat;
@@ -7,9 +7,36 @@
 }
 
 .red {
-  background-image: url(../Assets/SVG/ButtonBackgroung.svg);
+  background-image: url(../Assets/SVG/ButtonBackground.svg);
   background-size: 120px 120px;
   background-position: right 1px top 1px;
   background-repeat: no-repeat;
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .blue {
+    width: 350px;
+    height: 300px;
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .red {
+    width: 350px;
+    height: 300px;
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .smallScreenButton {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .smallScreenButton {
+    display: flex;
+  }
 }
