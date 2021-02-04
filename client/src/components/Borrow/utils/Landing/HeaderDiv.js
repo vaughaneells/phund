@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Menu, Col} from 'antd'
+import {Row, Menu, Col, Badge} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import LTTriangleIcon from '../DivSixComponents/triangleIcon'
@@ -70,7 +70,12 @@ function HeaderDiv() {
                 Login                          
             </Menu.Item>
             <Menu.Item>
-               <SignupButton></SignupButton>   
+                
+                    <Badge style={{height: 15, width: 15}} status='warning' title="You need to log on" offset={[1,10]}>
+                        <SignupButton>
+                   
+                        </SignupButton>  
+                   </Badge>
             </Menu.Item>
         </Menu>
         </Col>
