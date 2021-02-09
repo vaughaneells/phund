@@ -1,5 +1,4 @@
 import React from "react";
-// import "antd/dist/antd.css";
 import { Layout, Menu, Divider, Row, Col } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -15,22 +14,21 @@ import DivTwo from './Borrow/utils/Landing/DivTwo'
 
 
 
+
 const { Header, Footer, Content } = Layout;
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.logout();
+    // this.props.logout();
   }
   render() {
-
-    
     return (
       <div>
         <Router history={history}>
           <Layout>
-=======
+
             
               { <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
@@ -41,7 +39,7 @@ class Landing extends React.Component {
                 </Menu.Item>
               </Menu> }
 
-              <HeaderDiv></HeaderDiv>
+              <HeaderDiv logout={this.props.logout}></HeaderDiv>
             
             <Content>
               <DivOne></DivOne>

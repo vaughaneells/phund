@@ -42,13 +42,18 @@ class Home extends React.Component {
           <br />
           <Link to='/lend'>Lend</Link>
           <br />
-          <div>
+          {/* <div>
             <Link to='/'>Logout</Link>
-          </div>
+          </div> */}
           <div>
             <Link to='/test'>Test Component</Link>
           </div>
         </div>
+        <div>
+            <Link to='/'>First Step</Link>
+        </div>
+        
+
       </Router>
     );
   }
