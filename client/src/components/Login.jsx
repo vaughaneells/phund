@@ -9,7 +9,7 @@ also be used as the logout page.*/
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import {store} from '../helpers/store';
 import { userActions } from '../actions';
 
 class Login extends React.Component {
@@ -18,9 +18,9 @@ class Login extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
-
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

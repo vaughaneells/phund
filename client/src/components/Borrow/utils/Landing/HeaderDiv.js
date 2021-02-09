@@ -1,94 +1,176 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Row, Menu, Col, Badge} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
+import LogoutButton from '../Landing/LandingSignoutButton'
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import LTTriangleIcon from '../DivSixComponents/triangleIcon'
 import RTCloud from '../DivSixComponents/Cloud'
 import '../Landing/CSS/Header.css'
+import {store} from '../../../../helpers/store'
+import {userActions} from '../../../../actions';
 
 
-function HeaderDiv() {
-    return (
-        <>
-            <Row
-            align='top'
 
-            >
-                <Col
-                lg={2}
-                style={{justifyItems: 'left'}}
-                className='mobileResponsive'
+
+function HeaderDiv(props) {
+   let loggedIn = store.getState().authentication.loggedIn;
+    console.log(props);
+    if (loggedIn === false) {    
+        return (
+            <>         
+                <Row
+                align='top'
+    
                 >
-                    <LTTriangleIcon></LTTriangleIcon>
-                </Col>
+                    <Col
+                    lg={2}
+                    style={{justifyItems: 'left'}}
+                    className='mobileResponsive'
+                    >
+                        <LTTriangleIcon></LTTriangleIcon>
+                    </Col>
+                    <Col
+                    lg={2}
+                    >
+                    </Col>
                 <Col
-                lg={2}
+                lg={18}
+                className='centerMenu'
                 >
-                </Col>
-            <Col
-            lg={18}
-            className='centerMenu'
-            >
-            <Menu
-            mode="horizontal"
-            style={{fontSize: '12px'}}
-            > 
-            <Menu.Item
-            style={{marginRight: 90, fontFamily: 'Raleway', color: '#223D65'}}
-            >
-                <MenuLogo></MenuLogo>
-                PHUND.
-            </Menu.Item>
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >Products</Menu.Item>
-       
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >How it Works
+                <Menu
+                mode="horizontal"
+                style={{fontSize: '12px'}}
+                > 
+                <Menu.Item
+                style={{marginRight: 90, fontFamily: 'Raleway', color: '#223D65'}}
+                >
+                    <MenuLogo></MenuLogo>
+                    PHUND.
+                </Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Products</Menu.Item>
+           
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >How it Works
+    
+                </Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Features</Menu.Item>
+    
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Learn</Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Partners</Menu.Item>
+                <Menu.Item>
+    
+                </Menu.Item>
+                <Menu.Item>
+                    
+                </Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >
+                    Login                          
+                </Menu.Item>
+                <Menu.Item>
+                            <Badge style={{height: 15, width: 15}} status='warning' title="You need to log on" offset={[1,10]}> 
+                           <SignupButton>
+                            </SignupButton>  
+                       </Badge>        
+                </Menu.Item>
+            </Menu>
+            </Col>
+                    <Col
+                    lg={2}
+                    className='mobileResponsive'
+                    >
+                        <RTCloud></RTCloud>
+                    </Col>
+    
+                </Row>
+            </>
+        )
+    } else {
+        return (
 
-            </Menu.Item>
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >Features</Menu.Item>
-
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >Learn</Menu.Item>
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >Partners</Menu.Item>
-            <Menu.Item>
-
-            </Menu.Item>
-            <Menu.Item>
-                
-            </Menu.Item>
-            <Menu.Item
-            style={{fontFamily: 'Raleway', color: '#223D65'}}
-            >
-                Login                          
-            </Menu.Item>
-            <Menu.Item>
-                
-                    <Badge style={{height: 15, width: 15}} status='warning' title="You need to log on" offset={[1,10]}>
-                        <SignupButton>
-                   
-                        </SignupButton>  
-                   </Badge>
-            </Menu.Item>
-        </Menu>
-        </Col>
+            <>
+                <Row
+                align='top'
+    
+                >
+                    <Col
+                    lg={2}
+                    style={{justifyItems: 'left'}}
+                    className='mobileResponsive'
+                    >
+                        <LTTriangleIcon></LTTriangleIcon>
+                    </Col>
+                    <Col
+                    lg={2}
+                    >
+                    </Col>
                 <Col
-                lg={2}
-                className='mobileResponsive'
+                lg={18}
+                className='centerMenu'
                 >
-                    <RTCloud></RTCloud>
-                </Col>
-
-            </Row>
-        </>
-    )
+                <Menu
+                mode="horizontal"
+                style={{fontSize: '12px'}}
+                > 
+                <Menu.Item
+                style={{marginRight: 90, fontFamily: 'Raleway', color: '#223D65'}}
+                >
+                    <MenuLogo></MenuLogo>
+                    PHUND.
+                </Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Products</Menu.Item>
+           
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >How it Works
+    
+                </Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Features</Menu.Item>
+    
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Learn</Menu.Item>
+                <Menu.Item
+                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                >Partners</Menu.Item>
+                <Menu.Item>
+    
+                </Menu.Item>
+                <Menu.Item>
+                    
+                </Menu.Item>
+                <Menu.Item>
+                        <LogoutButton logout={props.logout}></LogoutButton>      
+                </Menu.Item>
+            </Menu>
+            </Col>
+                    <Col
+                    lg={2}
+                    className='mobileResponsive'
+                    >
+                        <RTCloud></RTCloud>
+                    </Col>
+    
+                </Row>
+           </>
+        ) 
+    }
 }
+
+
 
 export default HeaderDiv

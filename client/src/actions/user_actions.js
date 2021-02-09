@@ -32,7 +32,8 @@ function login(email, password) {
     return { type: userConstants.LOGIN_REQUEST };
   }
   function success() {
-    return { type: userConstants.LOGIN_SUCCESS };
+    return { type: userConstants.LOGIN_SUCCESS,
+    payload: {loggedIn: true}};
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };
