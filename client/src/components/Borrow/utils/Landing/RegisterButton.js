@@ -18,24 +18,38 @@ function ButtonGroup(props) {
     fontSize: '12px'
     }
 
-    const [state , setState] = useState({
-        firstName: '',
-        email: '',
-        password: ''
+    const [firstName , setFirstName] = useState({
+        firstName: ''
+    });
+    const [email , setEmail] = useState({
+      email: ''
+    });
+    const [password , setPassword] = useState({
+      password: ''
+    });
+
+    const handleNameChange = (e) => {
+        setFirstName({
+          [e.target.name]: e.target.value
+        })
+    };
+    const handleEmailChange = (e) => {
+      setEmail({
+        [e.target.name]: e.target.value
+      })
+    };
+    const handlePasswordChange = (e) => {
+      setPassword({
+      [e.target.name]: e.target.value
     })
-    
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setState({ [name]: value });
-        
-      }
+    };
 
     const showModal = () => {
         setVisible(true);
       };
       const [visible, setVisible] = React.useState(false);
       const handleCancel = () => {
-        
+
         setVisible(false);
       };
 
@@ -45,8 +59,8 @@ function ButtonGroup(props) {
 
 
     return (
-    
-        
+
+
             <>
 
         <Button onClick={showModal} style={styles}>Register</Button>
@@ -55,28 +69,29 @@ function ButtonGroup(props) {
         onCancel={handleCancel}
         okText="Register"
         onOk={()=> {
-          props.register;
+          props.register(firstName.firstName, email.email, password.password);
           history.push('/home');
         }}
         >
-            
+
             <Form>
           <Input
             placeholder="First Name"
             name='firstName'
-            onChange={handleChange}
+            onChange={handleNameChange}
           />
           <Input
             placeholder="Email"
             name='email'
-            onChange={handleChange}
+            onChange={handleEmailChange}
           />
           <Input
             placeholder="Password"
             name='password'
-            onChange={handleChange}
+            onChange={handlePasswordChange}
+            type="password"
           />
-                
+
             </Form>
         </Modal>
         </>
