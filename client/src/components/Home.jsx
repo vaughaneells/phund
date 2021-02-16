@@ -50,7 +50,7 @@ class Home extends React.Component {
           </div>
         </div>
         <div>
-            <Link to='/'>First Step</Link>
+            <Link to='/'>Landing Page</Link>
         </div>
         
 

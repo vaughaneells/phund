@@ -100,11 +100,11 @@ return(
                  
             </Col>
             <Col
-            lg={7}
+            lg={8}
             >
             </Col>
             <Col
-            lg={2}
+            lg={1}
             style={{justifyContent: 'right'}}
             >
                 <div className='rightTriangle'>

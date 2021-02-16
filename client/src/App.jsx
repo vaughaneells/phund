@@ -21,7 +21,7 @@ import {
   Plaid,
   TestComponent
 } from './components';
-// import 'antd/lib/button/style';
+
 
 
 class App extends React.Component {
@@ -51,7 +51,7 @@ class App extends React.Component {
             <Route exact path='/test' component={TestComponent} />
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={Landing} {...this.props} />
           </Switch>
         </Router>
       </div>

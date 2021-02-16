@@ -5,7 +5,6 @@ import React from 'react';
 
 
 function ButtonGroup(props) {
-    console.log(props.logout);
     const styles = {
         marginTop:"10",
     paddingTop: "15",

@@ -21,6 +21,7 @@ class Login extends React.Component {
       password: '',
     };
     
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -39,10 +40,12 @@ class Login extends React.Component {
   }
 
   render() {
+    
     const { loggedIn } = this.props;
     const { email, password } = this.state;
     return !loggedIn ? (
       <div>
+        
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           <input

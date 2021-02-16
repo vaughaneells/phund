@@ -3,6 +3,7 @@
 import { userConstants } from '../constants';
 import { userService } from '../services';
 import { alertActions } from '.';
+import { Link, Redirect } from 'react-router-dom';
 
 export const userActions = {
   login,
