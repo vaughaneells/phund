@@ -10,7 +10,7 @@ import '../Landing/CSS/DivTwo.css'
 function DivTwo () {
 
     const cardStyle ={
-            width: "280px", 
+            width: "260px", 
             height: "192px", 
             borderRadius: "16px", 
             // marginRight: "24px", 
@@ -63,9 +63,10 @@ function DivTwo () {
                 </Row>  
                 <Row
                 type='flex'
-                justify='end'
+                justify='space-between'
                 >
                     <Col
+                    
                     lg={8}
                     xs={24}
                     >

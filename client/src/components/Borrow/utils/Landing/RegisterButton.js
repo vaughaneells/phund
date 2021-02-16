@@ -1,11 +1,10 @@
 import { Button, Modal, Form, Input } from 'antd';
 import React, {useState, setState} from 'react';
-import {useHistory} from 'react-router-dom';
 import {userActions} from '../../../../actions';
-
+import {useHistory} from 'react-router-dom';
 
 function ButtonGroup(props) {
-  
+  let history = useHistory();
     const styles = {
         marginTop:"10",
     paddingTop: "15",
@@ -19,23 +18,17 @@ function ButtonGroup(props) {
     fontSize: '12px'
     }
 
-    const [email, setEmail] = useState({
-      email : ""
-    });
-    const [password, setPassword] = useState({
-      password: ""
-    });
+    const [state , setState] = useState({
+        firstName: '',
+        email: '',
+        password: ''
+    })
     
-    const handleEmailChange = (e) => {
-      setEmail({
-        [e.target.name] : e.target.value
-      })
-    };
-    const handlePasswordChange = (e) => {
-      setPassword({
-        [e.target.name] : e.target.value
-      })
-    };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setState({ [name]: value });
+        
+      }
 
     const showModal = () => {
         setVisible(true);
@@ -50,35 +43,38 @@ function ButtonGroup(props) {
         login: userActions.login
       };
 
-      let history = useHistory()
 
-
-      
     return (
     
         
             <>
 
-        <Button onClick={showModal} style={styles}>Login</Button>
+        <Button onClick={showModal} style={styles}>Register</Button>
         <Modal
         visible={visible}
         onCancel={handleCancel}
-        okText="Login"
-        onOk={() => {                   
-            props.login(email.email, password.password);  
-            history.push('/home');     
-            }}>          
+        okText="Register"
+        onOk={()=> {
+          props.register;
+          history.push('/home');
+        }}
+        >
+            
             <Form>
           <Input
-            placeholder="EMAIL"
-            name='email'
-            onChange={handleEmailChange}
+            placeholder="First Name"
+            name='firstName'
+            onChange={handleChange}
           />
           <Input
-            placeholder="PASSWORD"
+            placeholder="Email"
+            name='email'
+            onChange={handleChange}
+          />
+          <Input
+            placeholder="Password"
             name='password'
-            onChange={handlePasswordChange}
-            type="password"
+            onChange={handleChange}
           />
                 
             </Form>

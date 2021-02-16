@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
-import {Row, Menu, Col, Badge} from 'antd'
+import React, {useState, setState} from 'react'
+import {Row, Menu, Col, Badge, Modal, Form, Input} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
 import LogoutButton from '../Landing/LandingSignoutButton'
+import RegisterButton from '../Landing/RegisterButton'
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import LTTriangleIcon from '../DivSixComponents/triangleIcon'
 import RTCloud from '../DivSixComponents/Cloud'
@@ -14,8 +15,7 @@ import {userActions} from '../../../../actions';
 
 function HeaderDiv(props) {
    let loggedIn = store.getState().authentication.loggedIn;
-    console.log(props);
-    if (loggedIn === false) {    
+    if (loggedIn === false) {
         return (
             <>         
                 <Row
@@ -73,13 +73,15 @@ function HeaderDiv(props) {
                     
                 </Menu.Item>
                 <Menu.Item
-                style={{fontFamily: 'Raleway', color: '#223D65'}}
+                style={{fontFamily: 'Raleway', color: '#223D65'}} 
                 >
-                    Login                          
+                    <RegisterButton register={props.register}>
+
+                    </RegisterButton>
                 </Menu.Item>
                 <Menu.Item>
-                            <Badge style={{height: 15, width: 15}} status='warning' title="You need to log on" offset={[1,10]}> 
-                           <SignupButton>
+                        <Badge style={{height: 15, width: 15}} status='warning' title="You need to log on" offset={[1,10]}> 
+                            <SignupButton login={props.login}>
                             </SignupButton>  
                        </Badge>        
                 </Menu.Item>

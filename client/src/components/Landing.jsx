@@ -17,29 +17,26 @@ import DivTwo from './Borrow/utils/Landing/DivTwo'
 
 const { Header, Footer, Content } = Layout;
 
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.props.logout();
   }
   render() {
     return (
       <div>
         <Router history={history}>
-          <Layout>
-
-            
-              { <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+          <Layout>       
+              {/* { <Menu theme="dark" mode="horizontal">
                 <Menu.Item key="1">
                   <Link to="/login">login</Link>
                 </Menu.Item>
                 <Menu.Item key="2">
                   <Link to="/register">register</Link>
                 </Menu.Item>
-              </Menu> }
+              </Menu> } */}
 
-              <HeaderDiv logout={this.props.logout}></HeaderDiv>
+              <HeaderDiv logout={this.props.logout} login={this.props.login} register={this.props.register}></HeaderDiv>
             
             <Content>
               <DivOne></DivOne>
@@ -83,6 +80,8 @@ function mapState(state) {
 
 const actionCreators = {
   logout: userActions.logout,
+  login: userActions.login,
+  register: userActions.register
 };
 
 const connectedLanding = connect(mapState, actionCreators)(Landing);
