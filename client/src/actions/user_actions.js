@@ -11,8 +11,15 @@ export const userActions = {
   register,
   user,
   updateUser,
-  pageRefresh
+  pageRefresh,
+  // profileCreated
 };
+
+// function profileCreated(data) {
+//   return dispatch => {
+//     dispatch(request())
+//   }
+// }
 
 function login(email, password) {
   return dispatch => {
@@ -47,6 +54,7 @@ function register(firstName, email, password) {
     userService.register(firstName, email, password).then(
       res => {
         dispatch(success());
+        dispatch(register());
       },
       err => {
         dispatch(failure(err));
@@ -54,7 +62,9 @@ function register(firstName, email, password) {
       }
     );
   };
-
+  function register() {
+    return { type: userConstants.USER_PROFILE, payload: {PROFILE: true}}
+  }
   function request() {
     return { type: userConstants.REGISTER_REQUEST };
   }

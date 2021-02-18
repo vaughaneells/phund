@@ -27,5 +27,10 @@ export function user(state = {}, action) {
       return { SUCCESS: false };
     default:
       return state;
+
+    case userConstants.USER_PROFILE:
+      return { PROFILE: true };
+    case userConstants.USER_NOPROFILE:
+      return { PROFILE: false };
   }
 }
