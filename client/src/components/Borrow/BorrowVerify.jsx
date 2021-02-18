@@ -5,28 +5,22 @@ import PlaidLink from 'react-plaid-link';
 import config from 'config';
 import { thirdPartyService, userServices } from '../../services';
 import EmbedID from 'trulioo-react';
-
 import { userActions, borrowerActions, alertActions } from '../../actions';
 import { history, userCookie } from '../../helpers';
 
 class BorrowVerify extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       verified: false
     };
-
     let { firstName } = this.props;
-
     if (!firstName) {
       let user = userCookie();
       this.props.user(user);
     }
-
     this.handleClick = this.handleClick.bind(this);
   }
-
   handleClick(e) {
     e.preventDefault();
     if (trulioo) {
