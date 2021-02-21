@@ -5,10 +5,12 @@ import {
   BorrowEligible,
   BorrowUneligible,
   BorrowIntro,
-  BorrowUnderwrite
+  BorrowUnderwrite,
+  
 } from '.';
 import { PrivateRoute } from '../';
 import socket from 'socket.io-client';
+
 
 export const Borrow = ({ ...props }) => {
   var io = socket('http://localhost:3000');
@@ -41,6 +43,12 @@ export const Borrow = ({ ...props }) => {
             exact
             path='/borrow/underwrite'
             component={BorrowUnderwrite}
+            {...props}
+          />
+          <PrivateRoute
+            exact
+            path='/profilePage'
+            // component={Profile}
             {...props}
           />
         </Switch>

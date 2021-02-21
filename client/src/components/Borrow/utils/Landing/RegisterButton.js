@@ -70,27 +70,27 @@ function ButtonGroup(props) {
         okText="Register"
         onOk={()=> {
           props.register(firstName.firstName, email.email, password.password);
-          history.push('/home');
+          () => {history.push('/home')};
         }}
         >
 
             <Form>
-          <Input
-            placeholder="First Name"
-            name='firstName'
-            onChange={handleNameChange}
-          />
-          <Input
-            placeholder="Email"
-            name='email'
-            onChange={handleEmailChange}
-          />
-          <Input
-            placeholder="Password"
-            name='password'
-            onChange={handlePasswordChange}
-            type="password"
-          />
+              <Input
+                placeholder="First Name"
+                name='firstName'
+                onChange={handleNameChange}
+              />
+              <Input
+                placeholder="Email"
+                name='email'
+                onChange={handleEmailChange}
+              />
+              <Input
+                placeholder="Password"
+                name='password'
+                onChange={handlePasswordChange}
+                type="password"
+              />
 
             </Form>
         </Modal>

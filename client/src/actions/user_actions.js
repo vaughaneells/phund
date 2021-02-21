@@ -54,7 +54,6 @@ function register(firstName, email, password) {
     userService.register(firstName, email, password).then(
       res => {
         dispatch(success());
-        dispatch(register());
       },
       err => {
         dispatch(failure(err));
@@ -62,9 +61,6 @@ function register(firstName, email, password) {
       }
     );
   };
-  function register() {
-    return { type: userConstants.USER_PROFILE, payload: {PROFILE: true}}
-  }
   function request() {
     return { type: userConstants.REGISTER_REQUEST };
   }
@@ -104,13 +100,16 @@ function updateUser(updates) {
 
 //Get User Info Action
 function user(user) {
+  console.log(user.profile);
   return dispatch => {
     try {
+      
       dispatch(success(user));
     } catch (err) {
       dispatch(failure(err.toString()));
     }
     function success(user) {
+
       return { type: userConstants.GETUSER_SUCCESS, user };
     }
     function failure(error) {

@@ -24,7 +24,6 @@ function ButtonGroup(props) {
     const [password, setPassword] = useState({
       password: ""
     });
-
     const handleEmailChange = (e) => {
       setEmail({
         [e.target.name] : e.target.value
