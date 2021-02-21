@@ -43,7 +43,7 @@ function register(firstName, email, password) {
     body: JSON.stringify({
       firstName: firstName,
       email: email,
-      password: password
+      password: password,
     })
   };
 

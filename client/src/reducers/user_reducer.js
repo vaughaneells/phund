@@ -12,7 +12,8 @@ export function user(state = {}, action) {
         id: action.user.id,
         email: action.user.email,
         role: action.user.role,
-        verified: action.user.verified
+        verified: action.user.verified,
+        profile: action.user.profile
       };
     case userConstants.GETUSER_FAILURE:
       return { error: action.error };
@@ -28,9 +29,6 @@ export function user(state = {}, action) {
     default:
       return state;
 
-    case userConstants.USER_PROFILE:
-      return { PROFILE: true };
-    case userConstants.USER_NOPROFILE:
-      return { PROFILE: false };
+  
   }
 }

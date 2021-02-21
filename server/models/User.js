@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
   verified: {
     type: Boolean,
     default: false
+  },
+  profile: {
+    type: String,
+    default: "undecided"
   }
 });
 

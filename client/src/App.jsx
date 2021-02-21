@@ -21,6 +21,7 @@ import {
   Plaid,
   TestComponent
 } from './components';
+import profile from '../src/components/Profile/Profile'
 
 
 
@@ -52,6 +53,8 @@ class App extends React.Component {
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
             <Route exact path='/' component={Landing} {...this.props} />
+            <Route exact path='/profile' component={profile} {...this.props} />
+
           </Switch>
         </Router>
       </div>
