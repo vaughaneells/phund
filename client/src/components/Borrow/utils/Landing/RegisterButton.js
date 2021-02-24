@@ -70,7 +70,7 @@ function ButtonGroup(props) {
         okText="Register"
         onOk={()=> {
           props.register(firstName.firstName, email.email, password.password);
-          () => {history.push('/home')};
+          history.push('/home');
         }}
         >
 

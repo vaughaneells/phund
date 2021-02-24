@@ -18,7 +18,8 @@ class Register extends React.Component {
     this.state = {
       firstName: '',
       email: '',
-      password: ''
+      password: '',
+      profile: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +33,7 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { firstName, email, password } = this.state;
+    const { firstName, email, password} = this.state;
     if (firstName && email && password) {
       this.props.register(firstName, email, password);
     }

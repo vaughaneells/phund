@@ -1,7 +1,7 @@
 import React, {useState, setState} from 'react'
 import {Row, Menu, Col, Badge, Modal, Form, Input} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
-import LogoutButton from '../Landing/LandingSignoutButton'
+import LogoutButton from './SignoutButton'
 import RegisterButton from '../Landing/RegisterButton'
 import MenuLogo from '../DivSixComponents/PhundLogoMenu'
 import LTTriangleIcon from '../DivSixComponents/triangleIcon'

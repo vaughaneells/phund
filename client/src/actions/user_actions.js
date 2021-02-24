@@ -100,7 +100,6 @@ function updateUser(updates) {
 
 //Get User Info Action
 function user(user) {
-  console.log(user.profile);
   return dispatch => {
     try {
       
