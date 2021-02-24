@@ -1,10 +1,17 @@
 import { Button } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 
 
 function ButtonGroup(props) {
+
+    function logoutButton() {
+        props.logout();
+        history.push('/');
+    };
+    let history = useHistory();
     const styles = {
         marginTop:"10",
     paddingTop: "15",
@@ -16,9 +23,9 @@ function ButtonGroup(props) {
     borderWidth: "1",
     color: "#ffffff",
     fontSize: '12px'
-    }
+    }   
     return (
-        <Button onClick={props.logout} style={styles}>Log Out!</Button>
+        <Button onClick={logoutButton} style={styles}>Log Out!</Button>
     )
 }
 // function mapState(state) {

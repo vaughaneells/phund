@@ -33,7 +33,7 @@ router.post(
     }
 
     try {
-      const { firstName, email, password } = req.body;
+      const { firstName, email, password, profile } = req.body;
 
       // See if user exists
       let exist = await User.findOne({ email });

@@ -28,7 +28,6 @@ import profile from '../src/components/Profile/Profile'
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       prevLocation: ''
     };
@@ -70,7 +69,8 @@ function mapState(state) {
 
 const actionCreators = {
   clearAlerts: alertActions.clear,
-  logout: userActions.logout
+  logout: userActions.logout,
+  clear: userActions.clear
 };
 
 const connectedApp = connect(mapState, actionCreators)(App);

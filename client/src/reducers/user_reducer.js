@@ -13,7 +13,7 @@ export function user(state = {}, action) {
         email: action.user.email,
         role: action.user.role,
         verified: action.user.verified,
-        profile: action.user.profile
+        profile: false
       };
     case userConstants.GETUSER_FAILURE:
       return { error: action.error };
