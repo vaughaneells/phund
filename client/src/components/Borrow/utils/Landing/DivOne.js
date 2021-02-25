@@ -1,10 +1,10 @@
 import React from 'react'
 import {Row, Col} from 'antd'
-import LeftCloud from '../DivSixComponents/LeftCloud'
-import RightTriangle from '../DivSixComponents/RSTriangleSVG'
-import BlueButton from '../DivSixComponents/SmallBlueLendBtn'
-import RedButton from '../DivSixComponents/RedBorrowButton'
-import SmallBorrowButton from '../DivSixComponents/SmallRedBorrowButton'
+import LeftCloud from './Assets/DivSixComponents/LeftCloud'
+import RightTriangle from './Assets/DivSixComponents/RSTriangleSVG'
+import BlueButton from './Assets/DivSixComponents/SmallBlueLendBtn'
+import RedButton from './Assets/DivSixComponents/RedBorrowButton'
+import SmallBorrowButton from './Assets/DivSixComponents/SmallRedBorrowButton'
 import '../Landing/CSS/DivOne.css'
 
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { Router, Redirect, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PlaidLink from 'react-plaid-link';
-import { userActions, borrowerActions, alertActions } from '../../actions';
-import { history } from '../../helpers';
+import { userActions, borrowerActions, alertActions } from '../../../Redux/actions';
+import { history } from '../../../Redux/helpers';
 
 class BorrowEligible extends React.Component {
   constructor(props) {

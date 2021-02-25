@@ -3,12 +3,12 @@ import {Row, Menu, Col, Badge, Modal, Form, Input} from 'antd'
 import SignupButton from '../Landing/loginSignupButton'
 import LogoutButton from './SignoutButton'
 import RegisterButton from '../Landing/RegisterButton'
-import MenuLogo from '../DivSixComponents/PhundLogoMenu'
-import LTTriangleIcon from '../DivSixComponents/triangleIcon'
-import RTCloud from '../DivSixComponents/Cloud'
+import MenuLogo from './Assets/DivSixComponents/PhundLogoMenu'
+import LTTriangleIcon from './Assets/DivSixComponents/triangleIcon'
+import RTCloud from './Assets/DivSixComponents/Cloud'
 import '../Landing/CSS/Header.css'
-import {store} from '../../../../helpers/store'
-import {userActions} from '../../../../actions';
+import {store} from '../../../../../Redux/helpers/store'
+import {userActions} from '../../../../../Redux/actions';
 
 
 

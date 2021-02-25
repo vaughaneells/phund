@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row, Col, List, Avatar, Button} from 'antd'
-import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
-import LeftSideTriangle from '../DivSixComponents/triangleIcon'
+import RightSideTriangle from './Assets/DivSixComponents/RSTriangleSVG'
+import LeftSideTriangle from './Assets/DivSixComponents/triangleIcon'
 import {TeamOutlined, MinusCircleTwoTone} from '@ant-design/icons'
 import '../Landing/CSS/DivThree.css'
 

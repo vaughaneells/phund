@@ -2,8 +2,8 @@ import React from "react";
 import { Layout, Menu, Divider, Row, Col } from "antd";
 import { Router, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { history } from "../helpers";
-import { userActions } from "../actions";
+import { history } from "../../Redux/helpers";
+import { userActions } from "../../Redux/actions";
 import BottomFooter from './Borrow/utils/Landing/DivSix'
 import DivFive from './Borrow/utils/Landing/DivFive'
 import DivFour from './Borrow/utils/Landing/DivFour'

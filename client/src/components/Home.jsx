@@ -11,8 +11,8 @@ import React, { useState } from 'react';
 import { Router, Link } from 'react-router-dom';
 import { Layout } from "antd";
 import { connect } from 'react-redux';
-import { userActions, alertActions } from '../actions';
-import { history, userCookie } from '../helpers';
+import { userActions, alertActions } from '../../Redux/actions';
+import { history, userCookie } from '../../Redux/helpers';
 import Cookies from 'js-cookie';
 import ProfilePage from '../../src/components/Profile/Profile';
 import SignoutButton from './Borrow/utils/Landing/SignoutButton'

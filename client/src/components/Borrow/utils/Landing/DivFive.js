@@ -3,7 +3,7 @@ import {Row, Col, Card, Avatar} from 'antd'
 import '../Landing/CSS/DivFive.css'
 // import { GithubOutlined, AntDesignOutlined, AmazonOutlined } from '@ant-design/icons';
 // import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
-import LeftSideTriangle from '../DivSixComponents/triangleIcon'
+import LeftSideTriangle from './Assets/DivSixComponents/triangleIcon'
 
 
 

@@ -7,8 +7,8 @@ import React from 'react';
 import { Router, Route, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { history } from './helpers';
-import { alertActions, userActions } from './actions';
+import { history } from '../Redux/helpers';
+import { alertActions, userActions } from '../Redux/actions';
 import {
   PrivateRoute,
   Login,

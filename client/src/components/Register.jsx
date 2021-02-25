@@ -9,7 +9,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../actions';
+import { userActions } from '../../Redux/actions';
 
 class Register extends React.Component {
   constructor(props) {

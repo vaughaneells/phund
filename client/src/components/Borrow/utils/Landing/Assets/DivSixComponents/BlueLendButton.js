@@ -1,34 +1,36 @@
-import React from 'react'
 import {Button, Row, Col} from 'antd'
+import React from 'react'
 import {RightCircleOutlined} from '@ant-design/icons'
-import '../Landing/CSS/Button.css'
+import '../../CSS/Button.css'
 
-function ClickBorrow() {
-    const Buttonstyles = {
-    width: "508px",
-    height: "135px",
-    marginTop:"10",
-    paddingTop: "15",
-    paddingBottom: "15",
-    marginLeft: "30",
-    marginRight: "30",
-    backgroundColor:'#FF5776',
-    borderRadius: "25px",
-    borderWidth: "1",
 
-}
 
+
+
+function ClickLend() {
+  
     return(
-        <Button
-        style={Buttonstyles}
-        className="red"
-        >
-
-<Row>
+        <>
+          <Button
+          className='blue'
+          style={{
+              width: "508px",
+              height: "135px",
+              marginTop:"10",
+              paddingTop: "15",
+              paddingBottom: "15",
+              marginLeft: "30",
+              marginRight: "30",
+              backgroundColor:'#71B8F2',
+              borderRadius: "25px",
+              borderWidth: "1",
+                }}
+          >
+            <Row>
               <p
               style={{alignItems: 'flex-start', fontSize: 30, position: 'relative', marginTop: 10, fontWeight: 'bold', marginBottom: 0}}
               >
-              Borrow.
+              Lend.
               </p>
             </Row>
             <Row>
@@ -38,7 +40,7 @@ function ClickBorrow() {
                 <p
                 style={{ fontSize: 20 }}
                 >
-                Insant loans up to $500
+                Investment Porfolios starting at $25
               </p>
               </Col>
               <Col
@@ -52,10 +54,10 @@ function ClickBorrow() {
                 style={{color: "#FFFFFF", fontSize: 50, marginBottom: 15}} 
               />
               </Col>
-              </Row>
-
-        </Button>
-        )
+              </Row>       
+          </Button>
+        </>
+)
 }
 
-export default ClickBorrow
+export default ClickLend
