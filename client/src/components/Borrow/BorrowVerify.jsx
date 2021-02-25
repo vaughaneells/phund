@@ -3,10 +3,10 @@ import { Router, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PlaidLink from 'react-plaid-link';
 import config from 'config';
-import { thirdPartyService, userServices } from '../../services';
+import { thirdPartyService, userServices } from '../../../Redux/services';
 import EmbedID from 'trulioo-react';
-import { userActions, borrowerActions, alertActions } from '../../actions';
-import { history, userCookie } from '../../helpers';
+import { userActions, borrowerActions, alertActions } from '../../../Redux/actions';
+import { history, userCookie } from '../../../Redux/helpers';
 
 class BorrowVerify extends React.Component {
   constructor(props) {

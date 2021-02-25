@@ -9,8 +9,8 @@ also be used as the logout page.*/
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import {store} from '../helpers/store';
-import { userActions } from '../actions';
+import {store} from '../../Redux/helpers/store';
+import { userActions } from '../../Redux/actions';
 
 
 class Login extends React.Component {

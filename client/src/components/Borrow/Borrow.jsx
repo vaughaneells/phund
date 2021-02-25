@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { history } from '../../helpers';
+import { history } from '../../../Redux/helpers';
 import {
   BorrowEligible,
   BorrowUneligible,

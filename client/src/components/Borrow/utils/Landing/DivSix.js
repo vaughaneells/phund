@@ -1,22 +1,22 @@
 import React from 'react'
 
 import {Button, Row, Menu, Col, Divider} from 'antd'
-import BlueLendButton from '../DivSixComponents/BlueLendButton'
-import RedBorrowButton from '../DivSixComponents/RedBorrowButton'
-import CloudImage from '../DivSixComponents/Cloud'
-import PhundLogo from '../DivSixComponents/triangleIcon'
+import BlueLendButton from '../Landing/Assets/DivSixComponents/BlueLendButton'
+import RedBorrowButton from '../Landing/Assets/DivSixComponents/RedBorrowButton'
+import CloudImage from '../Landing/Assets/DivSixComponents/Cloud'
+import PhundLogo from '../Landing/Assets/DivSixComponents/triangleIcon'
 import SignupButton from './loginSignupButton'
-import Copyright from '../DivSixComponents/Copyright'
-import MainImage from '../DivSixComponents/DivSixImage'
+import Copyright from '../Landing/Assets/DivSixComponents/Copyright'
+import MainImage from '../Landing/Assets/DivSixComponents/PhundLogo'
 import {
     
     InstagramOutlined,
     LinkedinOutlined,
     TwitterOutlined,
   } from '@ant-design/icons';
-import MenuLogo from '../DivSixComponents/PhundLogoMenu'
-import RightSideTriangle from '../DivSixComponents/RSTriangleSVG'
-import LeftCloud from '../DivSixComponents/LeftCloud'
+import MenuLogo from './Assets/DivSixComponents/PhundLogoMenu'
+import RightSideTriangle from './Assets/DivSixComponents/RSTriangleSVG'
+import LeftCloud from './Assets/DivSixComponents/LeftCloud'
 import '../Landing/CSS/DivSix.css'
 import '../Landing/CSS/Button.css'
 import '../Landing/CSS/Header.css'

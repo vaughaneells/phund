@@ -2,8 +2,8 @@ import React from 'react';
 import { Router, Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../actions';
-import { history } from '../helpers';
+import { userActions } from '../../Redux/actions';
+import { history } from '../../Redux/helpers';
 
 class Build extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import { Button, Modal, Form, Input } from 'antd';
 import React, {useState, setState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import {userActions} from '../../../../actions';
+import {userActions} from '../../../../../Redux/actions';
 
 
 function ButtonGroup(props) {

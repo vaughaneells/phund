@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Link } from 'react-router-dom';
-import { history } from '../../helpers';
+import { history } from '../../../Redux/helpers';
 
 export const BorrowUneligible = () => {
   return (

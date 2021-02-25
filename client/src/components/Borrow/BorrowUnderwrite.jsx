@@ -2,8 +2,8 @@ import React from 'react';
 import { Router, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions, borrowerActions } from '../../actions';
-import { history } from '../../helpers';
+import { userActions, borrowerActions } from '../../../Redux/actions';
+import { history } from '../../../Redux/helpers';
 
 class BorrowUnderwrite extends React.Component {
   constructor(props) {
