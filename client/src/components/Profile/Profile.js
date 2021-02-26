@@ -1,10 +1,12 @@
 import React from 'react'
 import {Button, Row, Col} from 'antd'
 import './CSS/ProfilePage.css'
+import { useHistory } from 'react-router-dom';
 
 
 function ProfilePage(props) {
 
+    const history = useHistory();
     const {firstName} = props
 
     return(
@@ -16,7 +18,9 @@ function ProfilePage(props) {
         <Row>
             <p>Why don't you start your registration below</p>
         </Row>
-            <Button>Register here</Button>
+            <Button onClick={history.push('/profile')}>
+                Register here
+            </Button>
 
         <Row>
 

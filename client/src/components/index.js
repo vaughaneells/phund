@@ -1,6 +1,6 @@
 export * from './PrivateRoute.jsx';
-export * from './Home.jsx';
 export * from './Landing.jsx';
+export * from './HomePage.jsx';
 export * from './Login.jsx';
 export * from './Register.jsx';
 export * from './Sidebar.jsx';

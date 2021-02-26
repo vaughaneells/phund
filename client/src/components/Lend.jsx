@@ -8,7 +8,7 @@ import { history } from '../../Redux/helpers';
 class Lend extends React.Component {
   render() {
     const { firstName, prevLocation } = this.props;
-    if (prevLocation == '/home') {
+    if (prevLocation == '/landing') {
       return (
         <div>
           <Router history={history}>
@@ -21,7 +21,7 @@ class Lend extends React.Component {
       return (
         <Redirect
           to={{
-            pathname: '/home',
+            pathname: '/landing',
             state: { from: this.props.location }
           }}
         />

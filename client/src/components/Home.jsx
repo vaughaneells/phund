@@ -18,7 +18,7 @@ import ProfilePage from '../../src/components/Profile/Profile';
 import SignoutButton from './Borrow/utils/Landing/SignoutButton'
 
 const { Content } = Layout;
-class Home extends React.Component {
+class Landing extends React.Component {
   constructor(props) {
     super(props);
     const { loggedIn } = this.props;
@@ -39,8 +39,7 @@ class Home extends React.Component {
 
   render() {
     const { firstName, loggedIn, profile } = this.props;
-    console.log(profile);
-    if (profile === true) {
+    if (profile === false) {
       return (
           <div>
             <Layout>
@@ -98,5 +97,5 @@ const actionCreators = {
   
 };
 
-const connectedHome = connect(mapState, actionCreators)(Home);
-export { connectedHome as Home };
+const connectedHome = connect(mapState, actionCreators)(Landing);
+export { connectedHome as Landing };

@@ -64,7 +64,7 @@ function ButtonGroup(props) {
         okText="Login"
         onOk={() => {
             props.login(email.email, password.password);
-            history.push('/home');
+            history.push('/landing');
             }}>
             <Form>
           <Input

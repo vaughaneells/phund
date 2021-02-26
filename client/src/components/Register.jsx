@@ -81,7 +81,7 @@ class Register extends React.Component {
         </form>
       </div>
     ) : (
-      <Redirect to='/home' />
+      <Redirect to='/Landing' />
     );
   }
 }

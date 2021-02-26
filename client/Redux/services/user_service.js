@@ -21,7 +21,7 @@ function login(email, password) {
     body: JSON.stringify({ email: email, password: password })
   };
 
-  return fetch(`${config.apiUrl}/api/login`, requestOptions)
+  return fetch(`${config.apiUrl}/api/landing`, requestOptions)
     .then(handleResponse)
     .then(response => {
       try {

@@ -12,14 +12,15 @@ import { alertActions, userActions } from '../Redux/actions';
 import {
   PrivateRoute,
   Login,
-  Landing,
+  HomePage,
   Register,
-  Home,
+  Landing,
   Build,
   Borrow,
   Lend,
   Plaid,
-  TestComponent
+  TestComponent,
+  Profile
 } from './components';
 import profile from '../src/components/Profile/Profile'
 
@@ -44,14 +45,14 @@ class App extends React.Component {
         {alert.message && <div>{alert.message}</div>}
         <Router history={history}>
           <Switch>
-            <PrivateRoute path='/home' component={Home} {...this.props} />
+            <PrivateRoute path='/landing' component={Landing} {...this.props} />
             <PrivateRoute path='/borrow' component={Borrow} {...this.props} />
             <PrivateRoute path='/build' component={Build} {...this.props} />
             <PrivateRoute path='/lend' component={Lend} {...this.props} />
             <Route exact path='/test' component={TestComponent} />
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            <Route exact path='/' component={Landing} {...this.props} />
+            <Route path='/login' component={Login} {...this.props}/>
+            <Route path='/register' component={Register} {...this.props}/>
+            <Route exact path='/' component={HomePage} {...this.props} />
             <Route exact path='/profile' component={profile} {...this.props} />
 
           </Switch>

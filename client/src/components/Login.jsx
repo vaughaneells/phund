@@ -68,7 +68,7 @@ class Login extends React.Component {
         </form>
       </div>
     ) : (
-      <Redirect to='/home' />
+      <Redirect to='/landing' />
     );
   }
 }
