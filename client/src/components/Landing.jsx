@@ -1,88 +1,102 @@
-import React from "react";
-import { Layout, Menu, Divider, Row, Col } from "antd";
-import { Router, Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { history } from "../../Redux/helpers";
-import { userActions } from "../../Redux/actions";
-import BottomFooter from './Borrow/utils/Landing/DivSix'
-import DivFive from './Borrow/utils/Landing/DivFive'
-import DivFour from './Borrow/utils/Landing/DivFour'
-import DivThree from './Borrow/utils/Landing/DivThree'
-import HeaderDiv from './Borrow/utils/Landing/HeaderDiv'
-import DivOne from './Borrow/utils/Landing/DivOne'
-import DivTwo from './Borrow/utils/Landing/DivTwo'
+/*The home page component is displayed after signing in to the application, 
+it shows the signed in user's name plus a list of all registered users in 
+the tutorial application. The users are loaded into redux state by calling 
+this.props.getUsers() from the () react lifecycle hook, 
+which dispatches the redux action userActions.getAll().Users can also be 
+deleted from the user list, when the delete link is clicked it calls the 
+this.props.deleteUser(id) function which dispatches the redux action 
+userActions.delete(id).*/
+import { Button } from 'antd'
+import React, { useState } from 'react';
+import { Router, Link } from 'react-router-dom';
+import { Layout } from "antd";
+import { connect } from 'react-redux';
+import { userActions, alertActions } from '../../Redux/actions';
+import { history, userCookie } from '../../Redux/helpers';
+import Cookies from 'js-cookie';
+import ProfilePage from './Profile/Profile';
+import SignoutButton from './Borrow/utils/Landing/SignoutButton'
 
-
-
-
-const { Header, Footer, Content } = Layout;
-
-
+const { Content } = Layout;
 class Landing extends React.Component {
   constructor(props) {
     super(props);
+    const { loggedIn } = this.props;
+    if (!loggedIn && Cookies.get('user') && Cookies.get('id_1')) {
+      this.props.pageRefresh();
+    }
+    try {
+      let user = userCookie();
+      this.props.user(user);
+      
+    } catch (err) {
+      this.props.error(err);
+    }
+  
   }
+  
+ 
+
   render() {
-    return (
-      <div>
+    const { firstName, loggedIn, profile } = this.props;
+    console.log(profile);
+    if (profile === false) {
+      return (
+          <div>
+            <Layout>
+                <Content style={{backgroundColor: '#2A2958', height:'900px'}}>
+                  <ProfilePage firstName={firstName}></ProfilePage>
+                </Content>                
+            </Layout>
+          </div>      
+      )
+      
+    } else {
+      return (
         <Router history={history}>
-          <Layout>       
-              {/* { <Menu theme="dark" mode="horizontal">
-                <Menu.Item key="1">
-                  <Link to="/login">login</Link>
-                </Menu.Item>
-                <Menu.Item key="2">
-                  <Link to="/register">register</Link>
-                </Menu.Item>
-              </Menu> } */}
-
-              <HeaderDiv logout={this.props.logout} login={this.props.login} register={this.props.register}></HeaderDiv>
-            
-            <Content>
-              <DivOne></DivOne>
-            </Content>
-            <Content
-            style={{backgroundColor: '#2A2958'}}
-            >
-              <DivTwo>
-
-              </DivTwo>
-            </Content>
-            <Content
-            style={{backgroundColor: '#FFFFFF'}}
-            >
-              <DivThree></DivThree>
-            </Content>
-            <Content
-            style={{backgroundColor: '#2A2958'}}
-            >
-              <DivFour>
-              </DivFour>
-            </Content>
-            <Content
-            style={{backgroundColor: '#FFFFFF'}}
-            >
-              <DivFive></DivFive>
-            </Content>
-              <BottomFooter>
-              </BottomFooter>
-          </Layout>
+          <h1>Hello, {firstName}!</h1>
+          <div>
+            <Link to='/borrow'>Borrow</Link>
+            <br />
+            <Link to='/build'>Build</Link>
+            <br />
+            <Link to='/lend'>Lend</Link>
+            <br />
+            {/* <div>
+              <Link to='/'>Logout</Link>
+            </div> */}
+            <div>
+              <Link to='/test'>Test Component</Link>
+            </div>
+          </div>
+          <div>
+              <Link to='/'>Landing Page</Link>
+          </div>
+          <div>
+            <Link to='/profile'>Signup</Link>
+          </div>
+          <div>
+            <SignoutButton logout={this.props.signout}>Signout</SignoutButton>
+          </div>
         </Router>
-      </div>
-    );
-  }
-}
+      );
+    }
+ }
+}       
 
 function mapState(state) {
+  const { firstName, profile } = state.user;
   const { loggedIn } = state.authentication;
-  return { loggedIn };
+  return { firstName, loggedIn, profile };
 }
 
 const actionCreators = {
-  logout: userActions.logout,
-  login: userActions.login,
-  register: userActions.register
+  signout: userActions.logout,
+  user: userActions.user,
+  pageRefresh: userActions.pageRefresh,
+  error: alertActions.error,
+  
 };
 
-const connectedLanding = connect(mapState, actionCreators)(Landing);
-export { connectedLanding as Landing };
+const connectedHome = connect(mapState, actionCreators)(Landing);
+export { connectedHome as Landing };
