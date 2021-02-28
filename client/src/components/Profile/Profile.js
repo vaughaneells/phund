@@ -8,6 +8,9 @@ function ProfilePage(props) {
 
     const history = useHistory();
     const {firstName} = props
+    const startCreatingProfile = () => {
+        history.push('/createProfile')
+    }
 
     return(
 
@@ -18,7 +21,7 @@ function ProfilePage(props) {
         <Row>
             <p>Why don't you start your registration below</p>
         </Row>
-            <Button onClick={history.push('/profile')}>
+            <Button onClick={startCreatingProfile}>
                 Register here
             </Button>
 
