@@ -6,19 +6,12 @@ import {
   BorrowUneligible,
   BorrowIntro,
   BorrowUnderwrite,
-  
 } from '.';
 import { PrivateRoute } from '../';
-import socket from 'socket.io-client';
 
 
 export const Borrow = ({ ...props }) => {
-  var io = socket('http://localhost:3000');
-  useEffect(() => {
-    io.on('connection', () => {
-      console.log('listening from Borrow')
-    })
-  })
+
   return (
     <div>
       <Router history={history}>

@@ -39,7 +39,6 @@ class Landing extends React.Component {
 
   render() {
     const { firstName, loggedIn, profile } = this.props;
-    console.log(profile);
     if (profile === false) {
       return (
           <div>
