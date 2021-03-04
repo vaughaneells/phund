@@ -1,11 +1,18 @@
 import React from 'react';
-import { Input } from 'antd'
+import { Input, Form } from 'antd'
 
-const Address = ({ handleChange }) => {
- 
+const Address = (props) => {
+  const {handleChange, handleNext} = props;
   return (
-    <div>
-      <Input placeholder='Address'/>
+    <div className="fade">
+      <Form>
+        <Form.Item>
+          <Input
+          placeholder='Address'
+          onChange={(event) => {event.persist(); handleChange(event)}}
+          onPressEnter={handleNext}/>
+        </Form.Item>
+      </Form>
     </div>
   )
 }

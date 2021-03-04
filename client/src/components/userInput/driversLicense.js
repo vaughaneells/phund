@@ -1,10 +1,13 @@
 import React from 'react';
 import { Input } from 'antd'
 
-const driversLicense = (props) => {
+const driversLicense = ({handleChange}) => {
   return (
-    <div>
-      <Input placeholder="Hello from Driver's License"/>
+    <div className="fade">
+      <Input
+      onChange={handleChange}
+      placeholder="Hello from Driver's License"
+      />
     </div>
   )
 };

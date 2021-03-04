@@ -1,17 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Form, Input } from 'antd'
+import './CSS/CreateProfile.css'
 
 
-function SSN() {
-   
+function SSN(props) {
+    const {handleChange, handleNext} = props;
     return(
-        <div>
+        <div
+        className="fade"
+        >
             <Form>
                 <Form.Item>
-                    <Input placeholder='SSN'></Input>
+                    <Input
+                    name="ssn"
+                    placeholder='SSN'
+                    onChange={(event) => {event.persist(); handleChange(event)}}
+                    onPressEnter={handleNext}/>
                 </Form.Item>
             </Form>
-        
+
         </div>
     )
 }

@@ -39,4 +39,11 @@ router.post('/me/edit', auth, async (req, res) => {
   }
 });
 
+// router.post('/me/create', auth, async (req, res) => {
+//   try {
+//     const { profile } = req.body;
+//     let user = await User.findOne({ _id: req.id })
+//   }
+// })
+
 module.exports = router;

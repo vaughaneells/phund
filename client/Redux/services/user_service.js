@@ -1,5 +1,5 @@
-/*The user service encapsulates all backend api calls. The service 
-methods are exported via the userService object at the top of the file, and the 
+/*The user service encapsulates all backend api calls. The service
+methods are exported via the userService object at the top of the file, and the
 implementation of each method is located in the function declarations below.*/
 
 import config from 'config';
@@ -144,4 +144,29 @@ function updateUser(updateFields) {
         alert(err);
       }
     });
+}
+
+function createUserProfile(ssn, address, photoid) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'X-Requested-With': 'XmlHttpRequest',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      ssn: ssn,
+      address: address,
+      photoid: photoid
+    })
+  }
+  //find the route to use for updating userProfile
+  return fetch(`${config.apiUrl}/api/me/create`, requestOptions)
+  .then(response => {
+    try {
+      return response;
+    } catch (err) {
+      alert(err.msg);
+      return err;
+    }
+  });
 }
