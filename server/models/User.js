@@ -23,9 +23,19 @@ const UserSchema = new mongoose.Schema({
     default: false
   },
   profile: {
-    type: String,
-    default: "undecided"
+    ssn: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    photoid: {
+      type: String
+    }
   }
 });
 
 module.exports = User = mongoose.model('user', UserSchema);
+
+
+
