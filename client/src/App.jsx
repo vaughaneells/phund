@@ -6,7 +6,7 @@ below the routes that redirects the user to the home page. */
 import React from 'react';
 import { Router, Route, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import createProfile from './components/userInput/createProfile';
+import { createProfile } from './components/userInput/startProfile';
 import { history } from '../Redux/helpers';
 import { alertActions, userActions } from '../Redux/actions';
 import {

@@ -44,7 +44,7 @@ class Landing extends React.Component {
           <div>
             <Layout>
                 <Content style={{backgroundColor: '#2A2958', height:'900px'}}>
-                  <ProfilePage firstName={firstName}></ProfilePage>
+                  <ProfilePage logout={this.props.logout} login={this.props.login} register={this.props.register} firstName={firstName}></ProfilePage>
                 </Content>                
             </Layout>
           </div>      
