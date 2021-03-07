@@ -2,6 +2,8 @@ import React from 'react'
 import {Button, Row, Col} from 'antd'
 import './CSS/ProfilePage.css'
 import { useHistory } from 'react-router-dom';
+import HeaderDiv from './ProfileHeader'
+import { Header } from 'antd/lib/layout/layout';
 
 
 function ProfilePage(props) {
@@ -15,6 +17,9 @@ function ProfilePage(props) {
     return(
 
         <>
+        
+            <HeaderDiv logout={props.logout} login={props.login} register={props.register}></HeaderDiv>
+        
         <Row align='middle'>
             Hello {firstName}, it doesn't look like you are registered!
         </Row>

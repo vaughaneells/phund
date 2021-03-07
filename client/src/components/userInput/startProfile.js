@@ -1,19 +1,19 @@
 import { Button, Layout, Row, Col } from 'antd'
-import Icon from '@ant-design/icons';
 import React, { useState, useEffect, prevState } from "react";
 import socketIOClient from "socket.io-client";
+import { userActions } from '../../../Redux/actions'
+import { connect } from "react-redux";
 import SSN from './ssn';
 import Address from './address.js';
 import Driver from './driversLicense.js';
 const ENDPOINT = "http://localhost:3000";
 const { Content } = Layout;
-import customIcon from '../Borrow/utils/Landing/Assets/SVG/AirplaneIcon'
-import { FormProvider } from 'antd/lib/form/context';
+
 import Loading from './Loading.js';
 
-class CreateProfile extends React.Component {
-  constructor() {
-    super(),
+class startProfile extends React.Component {
+  constructor(props) {
+    super(props),
     this.state = {
       step: 1,
       ssn: '',
@@ -163,4 +163,16 @@ const styles = {
   }
 }
 
-export default CreateProfile;
+function mapState(state) {
+  const { loggedIn } = state.authentication;
+  return { loggedIn };
+}
+
+const actionCreators = {
+  logout: userActions.logout,
+  login: userActions.login,
+  register: userActions.register
+};
+
+const connectedProfile = connect(mapState, actionCreators)(startProfile);
+export { connectedProfile as createProfile };
