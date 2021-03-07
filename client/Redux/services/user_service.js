@@ -3,6 +3,7 @@ methods are exported via the userService object at the top of the file, and the
 implementation of each method is located in the function declarations below.*/
 
 import config from 'config';
+import profileHeader from '../../src/components/Profile/ProfileHeader';
 import handleResponse from '../helpers/handle_response';
 
 export const userService = {
@@ -10,7 +11,8 @@ export const userService = {
   logout,
   register,
   user,
-  updateUser
+  updateUser,
+  createUserProfile
 };
 
 //Calls login API
@@ -122,6 +124,7 @@ function verify() {
 }
 
 function updateUser(updateFields) {
+  console.log('update user is called')
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -129,7 +132,7 @@ function updateUser(updateFields) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ updates: updateFields })
-  };
+  }; 
 
   return fetch(
     `${config.apiUrl}/api/user/me/edit
@@ -146,21 +149,18 @@ function updateUser(updateFields) {
     });
 }
 
-function createUserProfile(ssn, address, photoid) {
+function createUserProfile(updatesFields) {
+ 
   const requestOptions = {
     method: 'POST',
     headers: {
       'X-Requested-With': 'XmlHttpRequest',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      ssn: ssn,
-      address: address,
-      photoid: photoid
-    })
+    body: JSON.stringify({ updates: updatesFields })
   }
   //find the route to use for updating userProfile
-  return fetch(`${config.apiUrl}/api/me/create`, requestOptions)
+  return fetch(`${config.apiUrl}/api/user/me/edit`, requestOptions)
   .then(response => {
     try {
       return response;

@@ -4,7 +4,8 @@ import './CSS/CreateProfile.css'
 
 
 function SSN(props) {
-    const {handleChange, handleNext} = props;
+    console.log(props);
+    const {handleChange, onSubmit} = props;
     return(
         <div
         className="fade"
@@ -15,7 +16,7 @@ function SSN(props) {
                     name="ssn"
                     placeholder='SSN'
                     onChange={(event) => {event.persist(); handleChange(event)}}
-                    onPressEnter={handleNext}/>
+                    onPressEnter={onSubmit}/>
                 </Form.Item>
             </Form>
 

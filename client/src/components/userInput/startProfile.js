@@ -6,8 +6,13 @@ import { connect } from "react-redux";
 import SSN from './ssn';
 import Address from './address.js';
 import Driver from './driversLicense.js';
+import Cookie from 'js-cookie';
+import jwt_decode from 'jwt-decode';
+import { userService }  from '../../../Redux/services';
+
 const ENDPOINT = "http://localhost:3000";
 const { Content } = Layout;
+
 
 import Loading from './Loading.js';
 
@@ -24,13 +29,25 @@ class startProfile extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
   
 
   handleChange(e) {
     this.setState({
         [e.target.name] : e.target.value
-    }, () => {console.log(e.target.value)})
+    })
+  }
+  onSubmit(e) {
+    
+    e.preventDefault();
+    var updateFields = { 
+      profile: {
+        ssn: this.state.ssn
+      }
+
+    }
+    userService.createUserProfile(updateFields);
   }
   handleNext() {
     this.setState({
@@ -64,6 +81,9 @@ class startProfile extends React.Component {
 
   
   render(){
+  var sexy = Cookie.get('user');
+  var userObj = jwt_decode(sexy);
+  var id = userObj.id;
   const loadingToggle = () => {
     if (this.state.loading) {
       return (
@@ -98,7 +118,7 @@ class startProfile extends React.Component {
             <Content style={styles.ContentStyle}>
               <SSN
               handleChange={this.handleChange}
-              handleNext={this.handleNext}
+              onSubmit={this.onSubmit}
               > </SSN>
               {loadingToggle()}
             </Content>
