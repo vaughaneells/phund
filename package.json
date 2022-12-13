@@ -24,7 +24,7 @@
     "cookie-parser": "^1.4.5",
     "date-fns": "^2.8.1",
     "deasync": "^0.1.20",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-validator": "^6.6.1",
     "gravatar": "^1.8.1",
     "history": "^4.10.1",
